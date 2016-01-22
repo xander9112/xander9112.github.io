@@ -1,0 +1,35 @@
+{% extends '//site/templates/layout' %}
+
+{% block content %}
+    <div class="js-content-inner"
+         data-type="{{ node.entity.spec.type }}"
+         data-node-id="{{ node.model.id }}"
+         data-updated-at="{{ node.entity.model.updated_at }}"
+         data-title="{{ data.title | raw }}">
+        <div class="b-page-header">{{ data.title }}</div>
+        <p>{{ data.content | raw }}</p>
+
+        <form method="get" action="">
+            <input type="text" name="q" value="{{ request.param('q') }}"/>
+            <button>поиск</button>
+        </form>
+
+        {% if request.param('q') %}
+            {% set result = tree.findNodesByKind('PageNode', {search: request.param('q')}) %}
+
+            {% if result.count() %}
+                {% for node in result %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">{{ node.entity.title }}</a></div>
+                        <div class="panel-body">
+                            {{ node.entity.content | striptags | raw }}
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            {% else %}
+                Ничего не найдено.
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
