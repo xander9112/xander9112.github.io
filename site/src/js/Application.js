@@ -1,67 +1,58 @@
-var App = angular.module('app', Dependencies, function ($httpProvider) {
-	"use strict";
-	$httpProvider.defaults.headers.post[ 'Content-Type' ] = 'application/x-www-form-urlencoded;charset=utf-8';
-	$httpProvider.defaults.headers.put[ 'Content-Type' ] = 'application/x-www-form-urlencoded;charset=utf-8';
-	$httpProvider.defaults.transformRequest = [
-		function (data) {
-			var param = function (obj) {
-				var query = '';
-				var name, value, fullSubName, subValue, innerObj, i;
+var $$ = $$ || {};
 
-				for (name in obj) {
-					value = obj[ name ];
+class Application {
+	constructor () {
+		"use strict";
+		this._initSlider();
+		this._initCards();
 
-					if (value instanceof Array) {
-						for (i = 0; i < value.length; ++i) {
-							subValue = value[ i ];
-							fullSubName = name + '[' + i + ']';
-							innerObj = {};
-							innerObj[ fullSubName ] = subValue;
-							query += param(innerObj) + '&';
-						}
-					}
-					else if (value instanceof Object) {
-						for (var subName in value) {
-							if (value.hasOwnProperty(subName) && subName !== '$$hashKey') {
-								subValue = value[ subName ];
-								fullSubName = name + '[' + subName + ']';
-								innerObj = {};
-								innerObj[ fullSubName ] = subValue;
-								query += param(innerObj) + '&';
-							}
-						}
-					}
-					else {
-						query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
-					}
+	}
+
+	_initSlider () {
+		"use strict";
+
+		$('.slider').slider({full_width: true});
+	}
+
+	_initCards () {
+		"use strict";
+
+		$(document).on('click.card', '.card', function (e) {
+			if ($(this).find('.card-reveal').length) {
+				console.log("card reveal");
+				if ($(e.target).is($('.card-reveal span.card-title')) || $(e.target).is($('.card-reveal span.card-title i'))) {
+					$(this).find('.card-reveal').velocity({translateY: 0}, {
+						duration: 300,
+						queue: false,
+						easing: 'easeOutQuad'
+					});
 				}
+				else {
+					$(this).find('.card-reveal').velocity({translateY: '-100%'}, {
+						duration: 300,
+						queue: false,
+						easing: 'easeOutQuad'
+					});
+				}
+			}
 
-				return query.length ? query.substr(0, query.length - 1) : query;
-			};
 
-			return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
-		}
-	];
+		});
+	}
+}
+
+$(function () {
+	$$.window = $(window);
+	$$.body = $(document.body);
+	$$.windowWidth = $$.window.width();
+	$$.windowHeight = $$.window.height();
+
+	$$.application = new Application();
+
+	$$.ESCAPE_KEY_CODE = 27;
+
+	$$.window.on('resize', function () {
+		$$.windowWidth = $$.window.width();
+		$$.windowHeight = $$.window.height();
+	});
 });
-
-App.config(Router);
-
-App.config(LocalStorageKeyPrefix);
-App.config(StripTrailingSlashes);
-//App.config(interpolateProvider);
-App.config(mdThemingProvider);
-App.config(iconConfig);
-
-//App.config(httpMethodInterceptor);
-/*App.config([ 'cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
- cfpLoadingBarProvider.spinnerTemplate = '<div class="g-page-loader"><md-progress-linear md-mode="indeterminate"></md-progress-linear></div>';
- } ]);*/
-/*App.config([ 'cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
- cfpLoadingBarProvider.includeSpinner = true;
- } ]);*/
-
-//App.factory("Bookmark", Bookmark);
-
-App.controller('MainController', MainController);
-
-//App.directive('repeatDone', repeatDone);

@@ -19,12 +19,9 @@ module.exports = {
 			'site/src/vendor/**/*'
 		],
 		js:           [
-			'site/src/js/controllers/*',
-			'site/src/js/directives/*.js',
-			'site/src/js/modules/*.js',
-			'site/src/js/services/*.js',
-			'site/src/js/Config.js',
-			'site/src/js/Router.js',
+			'site/src/js/utils/*',
+			'site/src/js/Component.js',
+			'site/src/js/Components/*',
 			'site/src/js/Application.js'
 		],
 		styles:       'site/src/styles/site.less',
