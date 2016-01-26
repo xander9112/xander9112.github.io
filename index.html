@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="app">
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -7,7 +7,9 @@
 
 	<title>AlexZander</title>
 
-	<link rel="stylesheet" href="site/assets/css/style.css">
+	<!-- CSS  -->
+	<link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,43 +18,176 @@
 	<base href="/"/>
 </head>
 <body>
-<div class="wrapper">
-	<header>
 
-	</header>
-	<!--<p class="view"><a href="https://github.com/xander9112">View My GitHub Profile</a></p>-->
-	<main>
-		<div ng-controller="MainController" ng-cloak>
-			<md-content class="md-padding" layout-xs="column" layout="row">
-				<div flex-xs flex-gt-xs="50" layout="column">
-					<md-card>
-						<md-card-title>
-							<md-card-title-text>
-								<span class="md-headline">Card with  image</span>
-								<span class="md-subhead">Extra Large</span>
-							</md-card-title-text>
-						</md-card-title>
-						<md-card-content layout="row" layout-align="space-between">
-							<div class="md-media-xl card-media"></div>
-							<md-card-actions layout="column">
-								<md-button class="md-icon-button" aria-label="Favorite">
-									<md-icon md-svg-icon="action:favorite"></md-icon>
-								</md-button>
-								<md-button class="md-icon-button" aria-label="Settings">
-									<md-icon md-svg-icon="navigation:menu"></md-icon>
-								</md-button>
-							</md-card-actions>
-						</md-card-content>
-					</md-card>
-				</div>
-			</md-content>
+<section id="top-bar">
+	<div class="spinner-layer spinner-green">
+		<div class="circle-clipper left">
+			<div class="circle"></div>
 		</div>
-	</main>
-	<footer>
-	</footer>
-</div>
-<script src="site/assets/js/vendor.js"></script>
-<script src="site/assets/js/app.js"></script>
+		<div class="gap-patch">
+			<div class="circle"></div>
+		</div>
+		<div class="circle-clipper right">
+			<div class="circle"></div>
+		</div>
+	</div>
+
+</section>
+<div class="container">
+	<div class="section content">
+
+		<!--   Icon Section   -->
+		<div class="row">
+			<div class="col s12 m12">
+				<div class="col s12 m4 left-side">
+					<img src="assets/images/user.jpg" alt="" class="circle user-img responsive-img">
+					<div class="block">
+						<h5 class="center indigo-text">Фурманчук Александр</h5>
+						<p class="light center">Frontend Developer</p>
+					</div>
+					<hr>
+					<div class="block">
+						<h5 class="left-align"><i class="mdi-action-account-box"></i>
+							About me
+						</h5>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+							blind texts.</p>
+						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+							paradisematic country, in which roasted parts. </p>
+					</div>
+					<div class="block">
+						<h5 class="left-align"><i class="mdi-action-perm-phone-msg"></i>
+							Contact me
+						</h5>
+						<p><i class="mdi-maps-pin-drop indigo-text"></i> Chakwal, Punjab, Pakistan<br/>
+							<i class="mdi-communication-phone indigo-text"></i> +92 0332 000 0000<br/>
+							<i class="mdi-content-link indigo-text"></i> <a href="http://www.mirchu.net/" class="indigo-text"
+																															target="_blank">http://www.mirchu.net/</a>
+						</p>
+					</div>
+					<div class="block">
+						<h5 class="left-align"><i class="mdi-action-stars"></i>
+							My Skills
+						</h5>
+						<h6>Adobe PhotoShop</h6>
+						<div class="progress">
+							<div class="progress-bar" style="width: 60%;"></div>
+						</div>
+						<h6>Web Design</h6>
+						<div class="progress">
+							<div class="progress-bar" style="width: 95%;"></div>
+						</div>
+						<h6>Print Design</h6>
+						<div class="progress">
+							<div class="progress-bar" style="width: 35%;"></div>
+						</div>
+						<h6>Wordpress</h6>
+						<div class="progress">
+							<div class="progress-bar" style="width: 65%;"></div>
+						</div>
+						<h6>Bootstrap</h6>
+						<div class="progress">
+							<div class="progress-bar" style="width: 99%;"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col s12 m8 right-side">
+					<h4 class="left-align"><i class="mdi-action-group-work"></i> Work Experience</h4>
+					<div class="block">
+
+						<h5>Creative Designer</h5>
+						<p class="helping-text"><i class="mdi-maps-place indigo-text"></i> Mirchu <i
+										class="mdi-action-today indigo-text"></i> 21 Feb 2012</p>
+						<p>By utilizing elements and principles of Material Design, we were able to create a framework that
+							incorporates components and animations that provide more feedback to users. Additionally, a single
+							underlying responsive system across all platforms allow for a more unified user experience.</p>
+					</div>
+					<div class="block">
+
+						<h5>Senior Web Designer</h5>
+						<p class="helping-text"><i class="mdi-maps-place indigo-text"></i> WorldFellow <i
+										class="mdi-action-today indigo-text"></i> 27 Jan 2009</p>
+						<p>By utilizing elements and principles of Material Design, we were able to create a framework that
+							incorporates components and animations that provide more feedback to users.</p>
+					</div>
+					<h4 class="left-align"><i class="mdi-social-school"></i> Education</h4>
+					<div class="block">
+
+						<h5>Master of Design</h5>
+						<p class="helping-text"><i class="mdi-maps-place indigo-text"></i> AIO University <i
+										class="mdi-action-today indigo-text"></i> 27 Aug 2007</p>
+						<p>By utilizing elements and principles of Material Design, we were able to create a framework that
+							incorporates components and animations that provide more feedback to users. Additionally, a single
+							underlying responsive system across all platforms allow for a more unified user experience. A small river
+							named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic
+							country, in which roasted parts.</p>
+					</div>
+					<div class="block">
+
+						<h5>Bachelor of Science(CS)</h5>
+						<p class="helping-text"><i class="mdi-maps-place indigo-text"></i> Myer's University <i
+										class="mdi-action-today indigo-text"></i> 27 Aug 2005</p>
+						<p>By utilizing elements and principles of Material Design, we were able to create a framework that
+							incorporates components and animations that provide more feedback to users. </p>
+					</div>
+					<h4 class="left-align"><i class="mdi-social-pages"></i> Portfolio</h4>
+					<div class="block">
+						<div class="row">
+							<div class="col m6 s12">
+								<div class="card">
+									<div class="card-image">
+										<img src="assets/images/workstation1.jpg" alt="work">
+										<div class="card-content">
+											<span class="card-title grey-text darken-4">Mirchu <i class="mdi-navigation-more-vert right"></i></span>
+
+											<p><a href="http://www.mirchu.net/">This is a link</a></p>
+										</div>
+										<div class="card-reveal">
+											<span class="card-title grey-text darken-4">Mirchu <i
+															class="mdi-navigation-close right"></i></span>
+											<p>Web and technology | News and updates. Mirchu.net is Web and Technology Blog. We represent easy
+												and unique Information related to the Technology and Web trends.</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="col m6 s12">
+								<div class="card">
+									<div class="card-image">
+										<img src="assets/images/workstation2.jpg" alt="work">
+										<div class="card-content">
+											<span class="card-title grey-text darken-4">ThemeSafari <i
+															class="mdi-navigation-more-vert right"></i></span>
+
+											<p><a href="http://www.themesafari.net/">This is a link</a></p>
+										</div>
+										<div class="card-reveal">
+											<span class="card-title grey-text darken-4">ThemeSafari <i class="mdi-navigation-close right"></i></span>
+											<p>Free Responsive bootstrap Themes. Download and share with friends.</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--  Scripts-->
+	<script src="assets/js/jquery-2.1.1.min.js"></script>
+	<script src="assets/js/materialize.js"></script>
+	<script src="assets/js/slider.js"></script>
+	<script src="assets/js/hammer.min.js"></script>
+	<script src="assets/js/cards.js"></script>
+	<script src="assets/js/init.js"></script>
+
 
 </body>
 </html>

@@ -16,9 +16,7 @@ module.exports = {
 			'site/src/vendor/jquery-2.1.4.min.js',
 			'site/src/vendor/lodash.min.js',
 			'site/src/vendor/jquery.nicescroll.js',
-			'site/src/vendor/angular/angular.js',
-			'site/src/vendor/angular/*.js',
-			//'site/src/vendor/**/*'
+			'site/src/vendor/**/*'
 		],
 		js:           [
 			'site/src/js/controllers/*',
