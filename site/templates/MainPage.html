@@ -1,0 +1,15 @@
+{% extends '//site/templates/layout' %}
+
+{% block content %}
+    <div class="js-content-inner"
+         data-type="{{ node.entity.spec.type }}"
+         data-node-id="{{ node.model.id }}"
+         data-updated-at="{{ node.entity.model.updated_at }}"
+         data-title="{{ data.title | raw }}">
+        <div class="b-page-header">Example page</div>
+
+        <p>{{ data.content | raw }}</p>
+
+        <p>{{ data.example }}</p>
+    </div>
+{% endblock %}
