@@ -1,4 +1,8 @@
-bower_components
-node_modules
-.idea/
-
+.DS_Store
+.idea
+node_modules/
+tmp/
+manifest.json
+*.log
+testing/
+package-lock.json
