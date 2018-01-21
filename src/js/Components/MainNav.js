@@ -8,7 +8,9 @@ export default class MainNav extends Component {
   get _defaultOptions () {
     'use strict'
 
-    return {}
+    return {
+      offsetTop: $('.js-slider-logo').length ? $('.js-slider-logo').offset().top : 50
+    }
   }
 
   initialize () {
@@ -35,7 +37,7 @@ export default class MainNav extends Component {
     })
 
     $(window).on('scroll', () => {
-      if ($(window).scrollTop() > 50) {
+      if ($(window).scrollTop() > this.options.offsetTop) {
         this.root.addClass('main-nav_fixed')
       } else {
         this.root.removeClass('main-nav_fixed')

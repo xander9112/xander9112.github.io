@@ -6033,7 +6033,7 @@ var MainNav = function (_Component) {
       });
 
       $(window).on('scroll', function () {
-        if ($(window).scrollTop() > 50) {
+        if ($(window).scrollTop() > _this2.options.offsetTop) {
           _this2.root.addClass('main-nav_fixed');
         } else {
           _this2.root.removeClass('main-nav_fixed');
@@ -6071,7 +6071,9 @@ var MainNav = function (_Component) {
     get: function get() {
       'use strict';
 
-      return {};
+      return {
+        offsetTop: $('.js-slider-logo').length ? $('.js-slider-logo').offset().top : 50
+      };
     }
   }]);
 

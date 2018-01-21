@@ -10,6 +10,16 @@
 	transition: width .3s ease-out;
   }
 
+  &_main-page {
+	.main-nav__logo {
+	  width: 0;
+
+	  &-wrap {
+		display: none;
+	  }
+	}
+  }
+
   &__phone {
 	margin: 20px 0 10px 0;
 	color: $--color-text-primary;
@@ -83,6 +93,10 @@
 
 	  .main-nav__logo {
 		width: 60%;
+
+		&-wrap {
+		  display: block;
+		}
 	  }
 	}
   }

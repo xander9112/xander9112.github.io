@@ -14608,6 +14608,14 @@ select.form-control-lg:not([size]):not([multiple]),
   transition: width .3s ease-out;
 }
 
+.main-nav_main-page .main-nav__logo {
+  width: 0;
+}
+
+.main-nav_main-page .main-nav__logo-wrap {
+  display: none;
+}
+
 .main-nav__phone {
   margin: 20px 0 10px 0;
   color: #30373b;
@@ -14690,6 +14698,10 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .main-nav_fixed .main-nav__logo {
     width: 60%;
+  }
+
+  .main-nav_fixed .main-nav__logo-wrap {
+    display: block;
   }
 }
 
@@ -15360,7 +15372,7 @@ html {
 
 @media (min-width: 992px) {
   .p-main {
-    margin-top: 90px;
+    margin-top: 68px;
   }
 }
 
