@@ -14602,6 +14602,12 @@ select.form-control-lg:not([size]):not([multiple]),
   text-align: center;
 }
 
+.main-nav__logo {
+  width: 100%;
+  -webkit-transition: width .3s ease-out;
+  transition: width .3s ease-out;
+}
+
 .main-nav__phone {
   margin: 20px 0 10px 0;
   color: #30373b;
@@ -14680,6 +14686,10 @@ select.form-control-lg:not([size]):not([multiple]),
   .main-nav_fixed {
     position: fixed;
     padding: 10px 0;
+  }
+
+  .main-nav_fixed .main-nav__logo {
+    width: 60%;
   }
 }
 
@@ -14765,6 +14775,10 @@ select.form-control-lg:not([size]):not([multiple]),
   margin: 0 6px;
   font-size: 14px;
   color: #997034;
+}
+
+.social-links a:hover {
+  color: #30373b;
 }
 
 .main-slider {

@@ -5,6 +5,11 @@
   background: $--color-white;
   text-align: center;
 
+  &__logo {
+	width: 100%;
+	transition: width .3s ease-out;
+  }
+
   &__phone {
 	margin: 20px 0 10px 0;
 	color: $--color-text-primary;
@@ -75,6 +80,10 @@
 	&_fixed {
 	  position: fixed;
 	  padding: 10px 0;
+
+	  .main-nav__logo {
+		width: 60%;
+	  }
 	}
   }
 
@@ -137,6 +146,10 @@
 	margin: 0 6px;
 	font-size: 14px;
 	color: $--color-main;
+
+	&:hover {
+	  color: $--color-text-primary;
+	}
   }
 
   @media(min-width: $--breakpoin-md) {
