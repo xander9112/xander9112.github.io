@@ -85,9 +85,9 @@ export default class Application {
   }
 
   _initAssets () {
-    if (location.host === '192.168.0.150') {
-      $('html').find('[rel="stylesheet"]').attr('href', `./dist/app.css?time=${+new Date()}`)
-    }
+    //    if (location.host === 'xander9112.github.io') {
+    $('html').find('[rel="stylesheet"]').attr('href', `./dist/app.css?time=${+new Date()}`)
+    //    }
 
     //    $('.main-slider__footer-title').html($(window).width())
   }
