@@ -58,6 +58,12 @@
 	  &:before {
 		display: block;
 	  }
+
+	  &_hide-arrow {
+		&:before {
+		  display: none;
+		}
+	  }
 	}
 
 	a {

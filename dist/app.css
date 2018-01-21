@@ -15152,6 +15152,10 @@ select.form-control-lg:not([size]):not([multiple]),
     display: block;
   }
 
+  .working-steps .step_hide-arrow:before {
+    display: none;
+  }
+
   .working-steps a.working-steps__link {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
