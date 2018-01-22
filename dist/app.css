@@ -13301,6 +13301,10 @@ a.text-dark:focus {
   background-image: none;
 }
 
+.btn .fa {
+  font-size: 10px;
+}
+
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
@@ -14031,7 +14035,7 @@ input[type="button"].btn-block {
   display: block;
   width: 100%;
   padding: 0.775rem 0 0.775rem 1rem;
-  font-size: 1rem;
+  font-size: 10px;
   line-height: 1.5;
   color: #495057;
   background-color: transparent;
@@ -14602,7 +14606,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .btn .fa {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .main-nav {
@@ -15409,6 +15413,10 @@ a {
   font-family: "LatoRegular";
   font-size: 12px;
   letter-spacing: 2px;
+}
+
+a .fa {
+  font-size: 10px;
 }
 
 a:hover {
