@@ -85,6 +85,14 @@
 	padding-bottom: 90px;
   }
 
+  .error-content {
+	color: $--color-red;
+	font-family: $--font-lato-regular;
+	letter-spacing: 2px;
+	font-size: 12px;
+	text-transform: uppercase;
+  }
+
   &__bottom {
 	padding: 20px 0;
 	background: #4d565c;

@@ -14034,7 +14034,7 @@ input[type="button"].btn-block {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.775rem 0 0.775rem 1rem;
+  padding: 0.775rem 0 0.775rem 0;
   font-size: 10px;
   line-height: 1.5;
   color: #495057;
@@ -14042,7 +14042,7 @@ input[type="button"].btn-block {
   background-clip: padding-box;
   border: none;
   border-bottom: 1px solid #997034;
-  text-align: right;
+  text-align: left;
   font-family: "LatoRegular";
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -14079,27 +14079,37 @@ input[type="button"].btn-block {
 .form-control::-webkit-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
+  text-align: right;
 }
 
 .form-control:disabled,
 .form-control[readonly] {
   background-color: #e9ecef;
   opacity: 1;
+}
+
+.form-control.error,
+.form-control.error:focus {
+  color: #cc0000;
+  border-bottom-color: #cc0000;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -14209,6 +14219,33 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .form-group {
   margin-bottom: 1rem;
+}
+
+.form-group_error {
+  position: relative;
+}
+
+.form-group_error:after {
+  content: '!';
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border: 1px solid #cc0000;
+  padding: 5px;
+  color: #cc0000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 11px;
 }
 
 .form-text {
@@ -15330,6 +15367,14 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .footer__top {
   padding-bottom: 90px;
+}
+
+.footer .error-content {
+  color: #cc0000;
+  font-family: "LatoRegular";
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .footer__bottom {

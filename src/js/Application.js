@@ -36,22 +36,51 @@ export default class Application {
       min: jQuery.validator.format('Please enter a value greater than or equal to {0}.')
     })
 
-    $('.js-form').validate({
-      errorClass: 'error',
-      rules: {
-        'email': {
-          required: true,
-          email: true
+    $('.js-form').each((index, element) => {
+      const formObject = $(element)
+
+      formObject.validate({
+        errorClass: 'error',
+        rules: {
+          'email': {
+            required: true,
+            email: true
+          },
+          'name': 'required'
         },
-        'name': 'required'
-      },
 
-      submitHandler: (form, event) => {
-        console.log(form, event)
+        showErrors: function (errorMap, errorList) {
+          /* $("#summary").html("Your form contains "
+             + this.numberOfInvalids()
+             + " errors, see details below.");*/
+          formObject.find('.js-error-content').html('Некорректные данные')
+          console.log(this.numberOfInvalids())
+          this.defaultShowErrors()
+        },
 
-        event.preventDefault()
-        return false
-      }
+        highlight: function (element, errorClass) {
+          $(element).parent().addClass('form-group_error')
+          $(element).addClass('error')
+          /* $(element).fadeOut(function() {
+             $(element).fadeIn();
+           });*/
+        },
+
+        unhighlight: function (element, errorClass) {
+          $(element).parent().removeClass('form-group_error')
+          $(element).removeClass('error')
+          /* $(element).fadeOut(function() {
+             $(element).fadeIn();
+           });*/
+        },
+
+        submitHandler: (form, event) => {
+          console.log(form, event)
+
+          event.preventDefault()
+          return false
+        }
+      })
     })
 
     $('.js-tabs').each((index, element) => {

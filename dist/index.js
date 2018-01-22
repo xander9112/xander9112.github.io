@@ -36049,22 +36049,51 @@ var Application = function () {
       min: jQuery.validator.format('Please enter a value greater than or equal to {0}.')
     });
 
-    $('.js-form').validate({
-      errorClass: 'error',
-      rules: {
-        'email': {
-          required: true,
-          email: true
+    $('.js-form').each(function (index, element) {
+      var formObject = $(element);
+
+      formObject.validate({
+        errorClass: 'error',
+        rules: {
+          'email': {
+            required: true,
+            email: true
+          },
+          'name': 'required'
         },
-        'name': 'required'
-      },
 
-      submitHandler: function submitHandler(form, event) {
-        console.log(form, event);
+        showErrors: function showErrors(errorMap, errorList) {
+          /* $("#summary").html("Your form contains "
+             + this.numberOfInvalids()
+             + " errors, see details below.");*/
+          formObject.find('.js-error-content').html('Некорректные данные');
+          console.log(this.numberOfInvalids());
+          this.defaultShowErrors();
+        },
 
-        event.preventDefault();
-        return false;
-      }
+        highlight: function highlight(element, errorClass) {
+          $(element).parent().addClass('form-group_error');
+          $(element).addClass('error');
+          /* $(element).fadeOut(function() {
+             $(element).fadeIn();
+           });*/
+        },
+
+        unhighlight: function unhighlight(element, errorClass) {
+          $(element).parent().removeClass('form-group_error');
+          $(element).removeClass('error');
+          /* $(element).fadeOut(function() {
+             $(element).fadeIn();
+           });*/
+        },
+
+        submitHandler: function submitHandler(form, event) {
+          console.log(form, event);
+
+          event.preventDefault();
+          return false;
+        }
+      });
     });
 
     $('.js-tabs').each(function (index, element) {
