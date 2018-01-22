@@ -17,6 +17,8 @@
   border-bottom: 1px solid $--color-main;
   text-align: right;
   font-family: $--font-lato-regular;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
   // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   @if $enable-rounded {
@@ -44,6 +46,12 @@
 	border-bottom: 1px solid $--color-main;
 	outline: 0;
 	box-shadow: none;
+
+
+	&::-webkit-input-placeholder {color: transparent}
+	&::-moz-placeholder          {color: transparent}
+	&:-moz-placeholder           {color: transparent}
+	&:-ms-input-placeholder      {color: transparent}
   }
 
   // Placeholder

@@ -13,7 +13,7 @@
 	width: 100%;
 	position: absolute;
 	z-index: 1;
-	top: 20%;
+	top: 16%;
 	text-align: center;
 
 	&-description {
@@ -42,11 +42,12 @@
 	  text-transform: uppercase;
 	  margin-bottom: 10px;
 	  letter-spacing: 2px;
+
 	  text-align: center;
 	}
 
 	&-description {
-	  font-family: $--font-oranien-baum-regular;
+	  font-family: $--font-lato-regular;
 	  color: $--color-white;
 	  font-size: 10px;
 	  text-transform: uppercase;
@@ -82,7 +83,7 @@
 		  display: none;
 		  content: '';
 		  width: 90px;
-		  height: 2px;
+		  height: 1px;
 		  position: absolute;
 		  transform: rotate(-50deg);
 		  left: -50px;
@@ -93,6 +94,10 @@
 	}
   }
 
+  .btn {
+	font-family: $--font-lato-regular;
+  }
+
   @media (min-width: $--breakpoin-md) {
 	&__image {
 	  right: 0;
@@ -101,6 +106,11 @@
 	&__footer {
 	  &-title {
 		font-size: 30px;
+		text-align: left;
+	  }
+
+	  &-description {
+		text-align: left;
 	  }
 
 	  &-statistic {
@@ -146,6 +156,10 @@
 
 		&-title {
 		  font-size: 9px;
+
+		  &:before {
+			left: -54px;
+		  }
 		}
 	  }
 	}
@@ -164,13 +178,18 @@
 
 	  &-statistic {
 		&-count {
-		  margin-right: 20px;
+		  margin-right: 40px;
 		  font-size: 40px;
 		}
 
 		&-title {
 		  margin-bottom: 7px;
 		  font-size: 10px;
+
+
+		  &:before {
+			left: -58px;
+		  }
 		}
 	  }
 	}

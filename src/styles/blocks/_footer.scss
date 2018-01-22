@@ -8,6 +8,10 @@
 
 	a {
 	  color: $--color-gray;
+
+	  &:hover {
+		color: $--color-main;
+	  }
 	}
   }
 
@@ -20,23 +24,24 @@
 	  display: flex;
 	  flex-direction: column;
 	  align-items: flex-start;
+	}
 
-	  a {
-		display: flex;
-		margin: 2px 0;
-		align-items: center;
+	&__item {
+	  display: flex;
+	  margin: 2px 0;
+	  align-items: center;
+	  color: $--color-main;
 
-		.fa {
-		  width: 10px;
-		  margin-right: 10px;
+	  .fa {
+		width: 10px;
+		margin-right: 10px;
 
-		  &-phone {
-			font-size: 13px;
-		  }
+		&-phone {
+		  font-size: 13px;
+		}
 
-		  &-envelope {
-			font-size: 13px;
-		  }
+		&-envelope {
+		  font-size: 13px;
 		}
 	  }
 	}
@@ -53,6 +58,10 @@
 	  letter-spacing: 2px;
 	  font-size: 12px;
 	  text-decoration: none;
+
+	  &:hover {
+		color: $--color-main;
+	  }
 	}
   }
 
@@ -64,6 +73,7 @@
 	  font-size: 12px;
 	  text-transform: uppercase;
 	  padding: 0;
+	  letter-spacing: 2px;
 
 	  .fa {
 		margin-left: 10px;
@@ -85,6 +95,15 @@
 
 	&-copyright {
 	  text-align: center;
+	}
+
+	a {
+	  text-decoration: underline;
+	  color: #7c868b;
+
+	  &:hover {
+		color: $--color-main;
+	  }
 	}
   }
 

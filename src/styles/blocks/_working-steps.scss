@@ -29,12 +29,13 @@
 	  color: $--color-text-primary;
 	  text-transform: uppercase;
 	  margin-left: 10px;
+	  letter-spacing: 3px;
 	}
   }
 
   a {
 	display: flex;
-	margin-top: 20px;
+	margin-top: 60px;
 	justify-content: flex-end;
 	align-items: center;
 	text-transform: uppercase;

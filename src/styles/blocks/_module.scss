@@ -51,6 +51,19 @@ html {
   transition: margin-top .3s ease-out;
 }
 
+a {
+  text-transform: uppercase;
+  font-family: $--font-lato-regular;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  &:hover {
+	text-decoration: none;
+
+	color: $--color-text-primary;
+  }
+}
+
 @media (min-width: $--breakpoin-md) {
   .page-title {
 	text-align: left;
