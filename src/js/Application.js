@@ -95,6 +95,23 @@ export default class Application {
 
     new MainNav($('.js-main-nav'))
 
+    $('.js-reviews').each((index, element) => {
+      const wrap = $(element).parents('.js-reviews-wrap')
+
+      const owlCarousel = $(element).owlCarousel({
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
+        items: 1
+      })
+
+      wrap.on('click', '.js-reviews-next', (event) => {
+        event.preventDefault()
+
+        owlCarousel.trigger('next.owl.carousel')
+      })
+    })
+
     $('.js-component').each((index, element) => {
       const componentName = $(element).data('component')
       const options = $(element).data('options')

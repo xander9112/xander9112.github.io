@@ -36110,6 +36110,23 @@ var Application = function () {
 
       new __WEBPACK_IMPORTED_MODULE_2__Components_MainNav__["default"]($('.js-main-nav'));
 
+      $('.js-reviews').each(function (index, element) {
+        var wrap = $(element).parents('.js-reviews-wrap');
+
+        var owlCarousel = $(element).owlCarousel({
+          loop: true,
+          margin: 20,
+          responsiveClass: true,
+          items: 1
+        });
+
+        wrap.on('click', '.js-reviews-next', function (event) {
+          event.preventDefault();
+
+          owlCarousel.trigger('next.owl.carousel');
+        });
+      });
+
       $('.js-component').each(function (index, element) {
         var componentName = $(element).data('component');
         var options = $(element).data('options');
