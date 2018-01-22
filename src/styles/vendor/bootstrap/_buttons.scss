@@ -6,15 +6,17 @@
 
 .btn {
   display: inline-block;
+  font-family: $--font-lato-regular;
   font-weight: $btn-font-weight;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: $btn-border-width solid transparent;
+  text-transform: uppercase;
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
-
+  font-size: 12px;
   // Share hover and focus styles
   @include hover-focus {
 	text-decoration: none;
