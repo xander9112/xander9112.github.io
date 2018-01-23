@@ -1,5 +1,5 @@
 .working-steps {
-  margin-top: 80px;
+  margin-top: 40px;
 
   .step {
 	display: flex;
@@ -54,7 +54,7 @@
 
   &_page {
 	margin-top: 0;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 
 	.step {
 	  flex-direction: column;
@@ -76,6 +76,8 @@
   }
 
   @media (min-width: $--breakpoin-md) {
+	margin-top: 80px;
+
 	.step {
 	  margin: 0;
 
@@ -98,6 +100,7 @@
 
 	&_page {
 	  margin-top: 0;
+	  margin-bottom: 40px;
 
 	  .step {
 		align-items: flex-end;

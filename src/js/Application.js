@@ -50,11 +50,12 @@ export default class Application {
         },
 
         showErrors: function (errorMap, errorList) {
-          /* $("#summary").html("Your form contains "
-             + this.numberOfInvalids()
-             + " errors, see details below.");*/
-          formObject.find('.js-error-content').html('Некорректные данные')
-          console.log(this.numberOfInvalids())
+
+          if (this.numberOfInvalids()) {
+            formObject.find('.js-error-content').html('Некорректные данные')
+          } else {
+            formObject.find('.js-error-content').html(' ')
+          }
           this.defaultShowErrors()
         },
 
@@ -75,9 +76,10 @@ export default class Application {
         },
 
         submitHandler: (form, event) => {
-          console.log(form, event)
-
           event.preventDefault()
+
+          $(form).find('.js-error-content').html(' ')
+
           return false
         }
       })

@@ -19,6 +19,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
+  line-height: 1.2;
 }
 
 .page-description {
@@ -39,7 +40,7 @@ html {
 }
 
 .page-block {
-  padding: 70px 0;
+  padding: 35px 0;
 }
 
 .background-color {
@@ -71,19 +72,24 @@ a {
 }
 
 @media (min-width: $--breakpoin-md) {
+  .page-block {
+	padding: 70px 0;
+  }
+
   .page-title {
 	text-align: left;
   }
 
   .page-description {
 	text-align: left;
+	font-size: 8px;
   }
 
   .p-main {
 	margin-top: 95px;
 
 	&_main-page {
-	  margin-top: 120px;
+	  margin-top: 108px;
 	}
   }
 }
@@ -91,7 +97,11 @@ a {
 @media (min-width: $--breakpoin-lg) {
   .p-main {
 	&_main-page {
-	  margin-top: 68px;
+	  //margin-top: 108px;
 	}
+  }
+
+  .page-description {
+	font-size: 10px;
   }
 }

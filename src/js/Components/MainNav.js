@@ -65,6 +65,7 @@ export default class MainNav extends Component {
   }
 
   toggle () {
+    console.log(this.root.hasClass('main-nav_opened'))
     if (this.root.hasClass('main-nav_opened')) {
       this.close()
     } else {

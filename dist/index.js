@@ -5957,10 +5957,14 @@ var OwlCarousel = function (_Component) {
         responsiveClass: true,
         responsive: {
           0: {
+            items: 1,
+            nav: false
+          },
+          768: {
             items: 2,
             nav: false
           },
-          960: {
+          992: {
             items: 3,
             nav: true,
             loop: false
@@ -6064,6 +6068,7 @@ var MainNav = function (_Component) {
   }, {
     key: 'toggle',
     value: function toggle() {
+      console.log(this.root.hasClass('main-nav_opened'));
       if (this.root.hasClass('main-nav_opened')) {
         this.close();
       } else {
@@ -36098,11 +36103,12 @@ var Application = function () {
         },
 
         showErrors: function showErrors(errorMap, errorList) {
-          /* $("#summary").html("Your form contains "
-             + this.numberOfInvalids()
-             + " errors, see details below.");*/
-          formObject.find('.js-error-content').html('Некорректные данные');
-          console.log(this.numberOfInvalids());
+
+          if (this.numberOfInvalids()) {
+            formObject.find('.js-error-content').html('Некорректные данные');
+          } else {
+            formObject.find('.js-error-content').html(' ');
+          }
           this.defaultShowErrors();
         },
 
@@ -36123,9 +36129,10 @@ var Application = function () {
         },
 
         submitHandler: function submitHandler(form, event) {
-          console.log(form, event);
-
           event.preventDefault();
+
+          $(form).find('.js-error-content').html(' ');
+
           return false;
         }
       });
