@@ -14780,6 +14780,108 @@ select.form-control-lg:not([size]):not([multiple]),
   line-height: 3;
 }
 
+.navigation .nav {
+  width: 100%;
+  list-style: none;
+  *zoom: 1;
+}
+
+.navigation .nav:before,
+.navigation .nav:after {
+  content: " ";
+  display: table;
+}
+
+.navigation .nav:after {
+  clear: both;
+}
+
+.navigation .nav ul {
+  list-style: none;
+  width: 9em;
+}
+
+.navigation .nav li {
+  position: relative;
+}
+
+.navigation .nav > li > .parent {
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.navigation .nav > li > a {
+  display: block;
+}
+
+.navigation .nav li ul {
+  position: absolute;
+  left: -9999px;
+  top: 100%;
+  width: 280px;
+  background: url("/dist/images/main-nav-bg.png");
+  padding: 22px 10px;
+}
+
+.navigation .nav > li.hover > ul {
+  left: -100px;
+}
+
+.navigation .nav li li.hover ul {
+  left: 100%;
+  top: 0;
+}
+
+.navigation .nav li li a {
+  display: block;
+  position: relative;
+  z-index: 100;
+  text-transform: inherit;
+  margin: 10px 0;
+}
+
+.navigation .nav li li li a {
+  background: #249578;
+  z-index: 200;
+  border-top: 1px solid #1d7a62;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .navigation .nav .active {
+    display: block;
+  }
+
+  .navigation .nav li ul {
+    width: 100%;
+    padding: 0;
+  }
+
+  .navigation .nav > li {
+    float: none;
+  }
+
+  .navigation .nav > li > .parent {
+    background-position: 95% 50%;
+  }
+
+  .navigation .nav ul {
+    display: block;
+    width: 100%;
+  }
+
+  .navigation .nav > li.hover > ul,
+  .navigation .nav .nav li li.hover ul {
+    position: static;
+  }
+}
+
 @media (min-width: 768px) {
   .navigation {
     display: -webkit-box;
@@ -14806,6 +14908,14 @@ select.form-control-lg:not([size]):not([multiple]),
   .navigation a {
     margin: 0 10px;
     line-height: 1.5;
+  }
+
+  .navigation .item .fa {
+    display: none;
+  }
+
+  .navigation .item ul {
+    position: absolute;
   }
 }
 

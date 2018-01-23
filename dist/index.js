@@ -6008,6 +6008,8 @@ var MainNav = function (_Component) {
     value: function initialize() {
       'use strict';
 
+      this.width = document.body.clientWidth;
+
       _get(MainNav.prototype.__proto__ || Object.getPrototypeOf(MainNav.prototype), 'initialize', this).call(this);
     }
   }, {
@@ -6016,20 +6018,29 @@ var MainNav = function (_Component) {
       'use strict';
 
       this.nodes = {
-        toggle: this.root.find('.js-toggle')
+        nav: this.root.find('.js-nav'),
+        item: this.root.find('.js-nav li'),
+        itemLink: this.root.find('.js-nav li a'),
+        toggle: this.root.find('.js-toggle'),
+
+        toggleItem: this.root.find('.js-toggle-item')
       };
     }
   }, {
     key: '_bindEvents',
     value: function _bindEvents() {
-      'use strict';
-
       var _this2 = this;
 
       this.nodes.toggle.on('click', function (event) {
         event.preventDefault();
 
         _this2.toggle();
+      });
+
+      $(window).bind('resize orientationchange', function () {
+        _this2.width = document.body.clientWidth;
+
+        _this2.adjustMenu();
       });
 
       $(window).on('scroll', function () {
@@ -6060,11 +6071,35 @@ var MainNav = function (_Component) {
       }
     }
   }, {
+    key: 'adjustMenu',
+    value: function adjustMenu() {
+      if (this.width < 768) {
+        this.nodes.item.unbind('mouseenter mouseleave');
+
+        this.nodes.itemLink.filter('.parent').unbind('click').bind('click', function (event) {
+          event.preventDefault();
+          $(event.currentTarget).parent('li').toggleClass('hover');
+        });
+      } else if (this.width >= 768) {
+        this.nodes.item.removeClass('hover');
+        this.nodes.itemLink.unbind('click');
+        this.nodes.item.unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function (event) {
+          $(event.currentTarget).toggleClass('hover');
+        });
+      }
+    }
+  }, {
     key: '_ready',
     value: function _ready() {
       'use strict';
 
-      //    this.root.owlCarousel(this.options)
+      this.nodes.itemLink.each(function () {
+        if ($(this).next().length > 0) {
+          $(this).addClass('parent');
+        }
+      });
+
+      this.adjustMenu();
     }
   }, {
     key: '_defaultOptions',

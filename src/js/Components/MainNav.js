@@ -16,6 +16,8 @@ export default class MainNav extends Component {
   initialize () {
     'use strict'
 
+    this.width = document.body.clientWidth
+
     super.initialize()
   }
 
@@ -23,17 +25,26 @@ export default class MainNav extends Component {
     'use strict'
 
     this.nodes = {
-      toggle: this.root.find('.js-toggle')
+      nav: this.root.find('.js-nav'),
+      item: this.root.find('.js-nav li'),
+      itemLink: this.root.find('.js-nav li a'),
+      toggle: this.root.find('.js-toggle'),
+
+      toggleItem: this.root.find('.js-toggle-item')
     }
   }
 
   _bindEvents () {
-    'use strict'
-
     this.nodes.toggle.on('click', (event) => {
       event.preventDefault()
 
       this.toggle()
+    })
+
+    $(window).bind('resize orientationchange', () => {
+      this.width = document.body.clientWidth
+
+      this.adjustMenu()
     })
 
     $(window).on('scroll', () => {
@@ -61,9 +72,32 @@ export default class MainNav extends Component {
     }
   }
 
+  adjustMenu () {
+    if (this.width < 768) {
+      this.nodes.item.unbind('mouseenter mouseleave')
+
+      this.nodes.itemLink.filter('.parent').unbind('click').bind('click', event => {
+        event.preventDefault()
+        $(event.currentTarget).parent('li').toggleClass('hover')
+      })
+    } else if (this.width >= 768) {
+      this.nodes.item.removeClass('hover')
+      this.nodes.itemLink.unbind('click')
+      this.nodes.item.unbind('mouseenter mouseleave').bind('mouseenter mouseleave', function (event) {
+        $(event.currentTarget).toggleClass('hover')
+      })
+    }
+  }
+
   _ready () {
     'use strict'
 
-    //    this.root.owlCarousel(this.options)
+    this.nodes.itemLink.each(function () {
+      if ($(this).next().length > 0) {
+        $(this).addClass('parent')
+      }
+    })
+
+    this.adjustMenu()
   }
 }
