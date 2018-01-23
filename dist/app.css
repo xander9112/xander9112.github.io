@@ -14652,6 +14652,10 @@ select.form-control-lg:not([size]):not([multiple]),
   text-align: center;
 }
 
+.main-nav .social-links {
+  margin: 20px 0;
+}
+
 .main-nav__logo {
   width: 100%;
   -webkit-transition: width .3s ease-out;
@@ -14721,6 +14725,10 @@ select.form-control-lg:not([size]):not([multiple]),
     z-index: 10;
     -webkit-transition: padding .3s ease-out;
     transition: padding .3s ease-out;
+  }
+
+  .main-nav .social-links {
+    margin: 0;
   }
 
   .main-nav_main-page .main-nav__logo {

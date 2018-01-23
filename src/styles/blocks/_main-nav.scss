@@ -3,8 +3,11 @@
   position: relative;
   //background: $--color-white;
   background: url('#{$imagePath}main-nav-bg.png');
-
   text-align: center;
+
+  .social-links {
+	margin: 20px 0;
+  }
 
   &__logo {
 	width: 100%;
@@ -59,13 +62,17 @@
 	}
   }
 
-  @media(min-width: $--breakpoin-md) {
+  @media (min-width: $--breakpoin-md) {
 	width: 100%;
 	position: fixed;
 	top: 0;
 	padding: 40px 0;
 	z-index: 10;
 	transition: padding .3s ease-out;
+
+	.social-links {
+	  margin: 0;
+	}
 
 	&_main-page {
 	  .main-nav__logo {
