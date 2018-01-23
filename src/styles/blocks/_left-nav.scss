@@ -17,7 +17,6 @@
 	&_btn {
 	  display: flex;
 	  justify-content: space-between;
-	  //padding: 10px 20px;
 	  font-family: $--font-lato-regular;
 
 	  .fa {
@@ -37,8 +36,13 @@
 
   @media (min-width: $--breakpoin-md) {
 	&__item {
-	  justify-content: flex-start;
 	  padding: 14px 0;
+	}
+  }
+
+  @media (min-width: $--breakpoin-xl) {
+	&__item {
+	  padding: 22px 0;
 	}
   }
 }
