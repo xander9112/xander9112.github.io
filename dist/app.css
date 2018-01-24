@@ -3469,11 +3469,11 @@ table {
 }
 
 .owl-dots .owl-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background: #30373b;
   border-radius: 50%;
-  margin: 0 10px;
+  margin: 0 8px;
 }
 
 .owl-dots .owl-dot.active {
@@ -15489,7 +15489,7 @@ select.form-control-lg:not([size]):not([multiple]),
   }
 
   .working-steps .step {
-    margin: 0;
+    margin: 0 0 20px 0;
   }
 
   .working-steps .step:before {
@@ -15517,6 +15517,10 @@ select.form-control-lg:not([size]):not([multiple]),
             align-items: flex-end;
   }
 
+  .working-steps_page .step__title {
+    width: 120px;
+  }
+
   .working-steps_page .step:before {
     display: none;
   }
@@ -15530,9 +15534,13 @@ select.form-control-lg:not([size]):not([multiple]),
     position: absolute;
     top: 0;
     right: 0;
-    width: 2px;
+    width: 1px;
     height: 100%;
     background: #000;
+  }
+
+  .working-steps_page .working-step:nth-child(odd) .step {
+    margin-right: 40px;
   }
 
   .working-steps_page .working-step:nth-child(odd) .step__count {
@@ -15561,13 +15569,14 @@ select.form-control-lg:not([size]):not([multiple]),
     content: '';
     position: absolute;
     top: 0;
-    left: -2px;
-    width: 2px;
+    left: -1px;
+    width: 1px;
     height: 100%;
     background: #000;
   }
 
   .working-steps_page .working-step:nth-child(even) .step {
+    margin-left: 40px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -15811,6 +15820,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .reviews {
+  margin-bottom: 40px;
   padding: 50px 0;
 }
 
@@ -15837,6 +15847,7 @@ select.form-control-lg:not([size]):not([multiple]),
   font-size: 12px;
   text-transform: uppercase;
   color: #997034;
+  letter-spacing: 2px;
   margin-bottom: 20px;
 }
 
@@ -15852,6 +15863,14 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 768px) {
+  .reviews__inner {
+    margin-top: 25px;
+  }
+
+  .reviews-item {
+    text-align: left;
+  }
+
   .reviews-item__name {
     font-size: 18px;
   }
@@ -15883,7 +15902,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .page-description {
@@ -15926,6 +15945,7 @@ a {
 
 a .fa {
   font-size: 10px;
+  margin-left: 20px;
 }
 
 a:hover {

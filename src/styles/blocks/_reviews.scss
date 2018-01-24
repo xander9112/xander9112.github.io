@@ -1,4 +1,5 @@
 .reviews {
+  margin-bottom: 40px;
   padding: 50px 0;
 
   &__inner {
@@ -23,7 +24,7 @@
 	  font-size: 12px;
 	  text-transform: uppercase;
 	  color: $--color-main;
-
+	  letter-spacing: 2px;
 	  margin-bottom: 20px;
 	}
 
@@ -40,7 +41,13 @@
   }
 
   @media (min-width: $--breakpoin-md) {
+	&__inner {
+	  margin-top: 25px;
+	}
+
 	&-item {
+	  text-align: left;
+
 	  &__name {
 		font-size: 18px;
 	  }

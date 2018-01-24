@@ -79,7 +79,7 @@
 	margin-top: 80px;
 
 	.step {
-	  margin: 0;
+	  margin: 0 0 20px 0;
 
 	  &:before {
 		display: block;
@@ -105,6 +105,10 @@
 	  .step {
 		align-items: flex-end;
 
+		&__title {
+		  width: 120px;
+		}
+
 		&:before {
 		  display: none;
 		}
@@ -120,13 +124,15 @@
 			  position: absolute;
 			  top: 0;
 			  right: 0;
-			  width: 2px;
+			  width: 1px;
 			  height: 100%;
 			  background: #000;
 			}
 		  }
 
 		  .step {
+			margin-right: 40px;
+
 			&__count {
 			  order: 1;
 			  margin-left: 10px;
@@ -151,18 +157,23 @@
 			  content: '';
 			  position: absolute;
 			  top: 0;
-			  left: -2px;
-			  width: 2px;
+			  left: -1px;
+			  width: 1px;
 			  height: 100%;
 			  background: #000;
 			}
 		  }
 
 		  .step {
+			margin-left: 40px;
 			align-items: flex-start;
 		  }
 		}
 	  }
 	}
+  }
+
+  @media (min-width: $--breakpoin-lg) {
+
   }
 }
