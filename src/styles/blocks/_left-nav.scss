@@ -37,6 +37,7 @@
   @media (min-width: $--breakpoin-md) {
 	&__item {
 	  padding: 14px 0;
+	  justify-content: flex-start;
 	}
   }
 
