@@ -7,6 +7,7 @@
 @import "footer";
 @import "breadcrumbs";
 @import "reviews";
+@import "contacts";
 
 html {
   font-family: $--font-oranien-baum-regular;
@@ -68,6 +69,22 @@ a {
   &:hover {
 	text-decoration: none;
 
+	color: $--color-text-primary;
+  }
+}
+
+form {
+  .btn[type="submit"] {
+	background: none;
+	color: $--color-white;
+	font-family: $--font-lato-regular;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 0;
+	letter-spacing: 2px;
+  }
+
+  .btn_dark[type="submit"] {
 	color: $--color-text-primary;
   }
 }

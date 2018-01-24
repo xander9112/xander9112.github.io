@@ -13,6 +13,10 @@
 	a {
 	  color: $--color-gray;
 
+	  .fa {
+		margin-left: 0;
+	  }
+
 	  &:hover {
 		color: $--color-main;
 	  }
