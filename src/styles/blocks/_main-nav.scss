@@ -1,7 +1,6 @@
 .main-nav {
   padding: 30px 0;
   position: relative;
-  //background: $--color-white;
   background: url('#{$imagePath}main-nav-bg.png');
   text-align: center;
 
@@ -66,7 +65,7 @@
 	width: 100%;
 	position: fixed;
 	top: 0;
-	padding: 40px 0;
+	padding: 34px 0;
 	z-index: 10;
 	transition: padding .3s ease-out;
 
@@ -74,7 +73,13 @@
 	  margin: 0;
 	}
 
+	.main-nav__logo {
+	  width: 80%;
+	}
+
 	&_main-page {
+	  padding: 40px 0;
+
 	  .main-nav__logo {
 		width: 0;
 
@@ -94,12 +99,13 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		background: $--color-white;
+		background: url('#{$imagePath}main-nav-bg.png');
 		padding-left: 15px;
 
 		.nav > li.hover > ul {
+		  background: url('#{$imagePath}main-nav-bg.png');
 		  left: 0;
-		  background: $--color-white;
+		  padding: 22px 0;
 		}
 
 		&-wrap {

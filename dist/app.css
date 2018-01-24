@@ -14723,7 +14723,7 @@ select.form-control-lg:not([size]):not([multiple]),
     width: 100%;
     position: fixed;
     top: 0;
-    padding: 40px 0;
+    padding: 34px 0;
     z-index: 10;
     -webkit-transition: padding .3s ease-out;
     transition: padding .3s ease-out;
@@ -14731,6 +14731,14 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .main-nav .social-links {
     margin: 0;
+  }
+
+  .main-nav .main-nav__logo {
+    width: 80%;
+  }
+
+  .main-nav_main-page {
+    padding: 40px 0;
   }
 
   .main-nav_main-page .main-nav__logo {
@@ -14752,13 +14760,14 @@ select.form-control-lg:not([size]):not([multiple]),
     position: absolute;
     left: 0;
     top: 0;
-    background: #fff;
+    background: url("/dist/images/main-nav-bg.png");
     padding-left: 15px;
   }
 
   .main-nav_opened .navigation .nav > li.hover > ul {
+    background: url("/dist/images/main-nav-bg.png");
     left: 0;
-    background: #fff;
+    padding: 22px 0;
   }
 
   .main-nav_opened .navigation-wrap {
