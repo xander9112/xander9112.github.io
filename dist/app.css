@@ -15082,6 +15082,7 @@ select.form-control-lg:not([size]):not([multiple]),
   font-family: "OranienBaumRegular";
   font-size: 30px;
   color: #fff;
+  line-height: 1;
 }
 
 .main-slider__content-button .btn {
