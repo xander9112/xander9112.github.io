@@ -92,7 +92,7 @@
 	&_opened {
 	  .navigation {
 		position: absolute;
-		left: -24px;
+		left: 0;
 		top: 0;
 		background: $--color-white;
 		padding-left: 15px;
@@ -103,6 +103,7 @@
 		}
 
 		&-wrap {
+		  left: 0;
 		  display: flex;
 		}
 	  }

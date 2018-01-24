@@ -14750,7 +14750,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .main-nav_opened .navigation {
     position: absolute;
-    left: -24px;
+    left: 0;
     top: 0;
     background: #fff;
     padding-left: 15px;
@@ -14762,6 +14762,7 @@ select.form-control-lg:not([size]):not([multiple]),
   }
 
   .main-nav_opened .navigation-wrap {
+    left: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
