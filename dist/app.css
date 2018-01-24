@@ -14723,7 +14723,7 @@ select.form-control-lg:not([size]):not([multiple]),
     width: 100%;
     position: fixed;
     top: 0;
-    padding: 34px 0;
+    padding: 15px 0;
     z-index: 10;
     -webkit-transition: padding .3s ease-out;
     transition: padding .3s ease-out;
@@ -14734,7 +14734,7 @@ select.form-control-lg:not([size]):not([multiple]),
   }
 
   .main-nav .main-nav__logo {
-    width: 80%;
+    width: 70%;
   }
 
   .main-nav_main-page {
@@ -14788,6 +14788,12 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .main-nav_fixed .main-nav__logo-wrap {
     display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-nav {
+    padding: 34px 0;
   }
 }
 

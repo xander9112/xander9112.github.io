@@ -65,7 +65,7 @@
 	width: 100%;
 	position: fixed;
 	top: 0;
-	padding: 34px 0;
+	padding: 15px 0;
 	z-index: 10;
 	transition: padding .3s ease-out;
 
@@ -74,7 +74,7 @@
 	}
 
 	.main-nav__logo {
-	  width: 80%;
+	  width: 70%;
 	}
 
 	&_main-page {
@@ -130,7 +130,7 @@
   }
 
   @media (min-width: $--breakpoin-lg) {
-
+	padding: 34px 0;
   }
 }
 
