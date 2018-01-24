@@ -14767,7 +14767,7 @@ select.form-control-lg:not([size]):not([multiple]),
   .main-nav_opened .navigation .nav > li.hover > ul {
     background: url("/dist/images/main-nav-bg.png");
     left: 0;
-    padding: 22px 0;
+    text-align: left;
   }
 
   .main-nav_opened .navigation-wrap {
@@ -14846,6 +14846,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .navigation .nav li li a {
+  white-space: nowrap;
   text-transform: inherit;
 }
 

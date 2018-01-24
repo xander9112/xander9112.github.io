@@ -105,7 +105,7 @@
 		.nav > li.hover > ul {
 		  background: url('#{$imagePath}main-nav-bg.png');
 		  left: 0;
-		  padding: 22px 0;
+		  text-align: left;
 		}
 
 		&-wrap {
@@ -168,6 +168,7 @@
 	}
 
 	& li li a {
+	  white-space: nowrap;
 	  text-transform: inherit;
 	}
 
