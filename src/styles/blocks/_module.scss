@@ -13,6 +13,15 @@ html {
   font-family: $--font-oranien-baum-regular;
 }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
 .page-title {
   font-family: $--font-oranien-baum-regular;
   font-size: 50px;
@@ -107,7 +116,7 @@ form {
 	margin-top: 95px;
 
 	&_main-page {
-	  margin-top: 108px;
+	  margin-top: 96px;
 	}
   }
 }

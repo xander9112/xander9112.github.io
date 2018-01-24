@@ -5,11 +5,12 @@
 
   &__image {
 	position: relative;
-	right: 100%;
-	transform: translateX(-100%);
+	//right: 100%;
+	//transform: translateX(-100%);
 
 	img {
 	  min-width: 100%;
+	  float: right;
 	}
   }
 
@@ -103,15 +104,15 @@
 
   @media (min-width: $--breakpoin-sm) {
 	&__image {
-	  right: 50%;
+	  //right: 50%;
 	}
   }
 
   @media (min-width: $--breakpoin-md) {
 	&__image {
-	  left: 0;
-	  right: inherit;
-	  transform: translateX(-25%);
+	  //left: 0;
+	  //right: inherit;
+	  transform: translateX(75%);
 	}
 
 	&__footer {
@@ -152,7 +153,7 @@
   @media (min-width: $--breakpoin-lg) {
 	&__image {
 	  position: relative;
-	  transform: translateX(-50%);
+	  transform: translateX(50%);
 	}
 
 	&__footer {
@@ -179,8 +180,8 @@
 
   @media (min-width: $--breakpoin-xl) {
 	&__image {
-	  left: 50%;
-	  transform: translateX(-50%);
+	  //left: 50%;
+	  transform: translateX(0);
 	}
 
 	&__footer {

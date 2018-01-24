@@ -15062,13 +15062,11 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .main-slider__image {
   position: relative;
-  right: 100%;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
 }
 
 .main-slider__image img {
   min-width: 100%;
+  float: right;
 }
 
 .main-slider__content {
@@ -15167,18 +15165,10 @@ select.form-control-lg:not([size]):not([multiple]),
   font-family: "LatoRegular";
 }
 
-@media (min-width: 576px) {
-  .main-slider__image {
-    right: 50%;
-  }
-}
-
 @media (min-width: 768px) {
   .main-slider__image {
-    left: 0;
-    right: inherit;
-    -webkit-transform: translateX(-25%);
-            transform: translateX(-25%);
+    -webkit-transform: translateX(75%);
+            transform: translateX(75%);
   }
 
   .main-slider__footer-title {
@@ -15223,8 +15213,8 @@ select.form-control-lg:not([size]):not([multiple]),
 @media (min-width: 992px) {
   .main-slider__image {
     position: relative;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
 
   .main-slider__footer-title {
@@ -15247,9 +15237,8 @@ select.form-control-lg:not([size]):not([multiple]),
 
 @media (min-width: 1200px) {
   .main-slider__image {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 
   .main-slider__footer-title {
@@ -16067,6 +16056,15 @@ html {
   font-family: "OranienBaumRegular";
 }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
 .page-title {
   font-family: "OranienBaumRegular";
   font-size: 50px;
@@ -16158,7 +16156,7 @@ form .btn_dark[type="submit"] {
   }
 
   .p-main_main-page {
-    margin-top: 108px;
+    margin-top: 96px;
   }
 }
 
