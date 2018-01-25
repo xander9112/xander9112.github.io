@@ -50,7 +50,7 @@
 	  }
 
 	  &__file {
-		font-size: 10px;
+		font-size: 18px;
 		text-decoration: underline;
 		margin: 5px 0;
 
@@ -94,6 +94,10 @@
 	  .contacts {
 		&__inner {
 
+		}
+
+		&__file {
+		  font-size: 10px;
 		}
 
 		&__item {

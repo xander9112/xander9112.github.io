@@ -13,6 +13,49 @@ html {
   font-family: $--font-oranien-baum-regular;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+.p-page {
+  height: 100%;
+
+  &__not-found {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $--color-white;
+
+	&-inner {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+
+	h1 {
+	  font-family: $--font-oranien-baum-regular;
+	  font-size: 60px;
+
+	}
+
+	h3 {
+	  font-family: $--font-lato-regular;
+	  font-size: 10px;
+	  color: $--color-gray-light;
+	  text-transform: uppercase;
+	}
+
+	a {
+	  margin-top: 50px;
+	  color: $--color-gray-light;
+	  text-decoration: underline;
+	}
+  }
+}
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -99,6 +142,22 @@ form {
 }
 
 @media (min-width: $--breakpoin-md) {
+  .p-page {
+	&__not-found {
+	  h1 {
+		font-size: 100px;
+	  }
+
+	  h3 {
+		font-size: 16px;
+	  }
+
+	  a {
+		font-size: 16px;
+	  }
+	}
+  }
+
   .page-block {
 	padding: 70px 0;
   }
