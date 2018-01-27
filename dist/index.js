@@ -42650,8 +42650,6 @@ var Projects = function (_Component) {
 
       var row = parseInt(index / 3, 10);
 
-      console.log(this.width, this.options.widthStep);
-
       if (this.width >= this.options.widthStep) {
         if (row * 3) {
           $(this._template(owlCarouselTemplate, client, task)).insertAfter(this.nodes.project.eq(row * 3 - 1));
