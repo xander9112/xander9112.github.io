@@ -1,6 +1,7 @@
 import Tabs from './Components/Tabs'
 import OwlCarousel from './Components/OwlCarousel'
 import MainNav from './Components/MainNav'
+import Projects from './Components/Projects'
 
 import 'jquery-validation'
 import './plugins/jquery.formstyler'
@@ -129,6 +130,10 @@ export default class Application {
       if (componentClass) {
         let component = new componentClass.default($(element), options)
       }
+    })
+
+    $('.js-projects').each((index, element) => {
+      new Projects($(element))
     })
   }
 

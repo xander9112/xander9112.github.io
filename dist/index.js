@@ -36040,13 +36040,15 @@ Popper.Defaults = Defaults;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Components_Tabs__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Components_OwlCarousel__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Components_MainNav__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery_validation__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery_validation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery_validation__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plugins_jquery_formstyler__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plugins_jquery_formstyler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__plugins_jquery_formstyler__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Components_Projects__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery_validation__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery_validation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery_validation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__plugins_jquery_formstyler__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__plugins_jquery_formstyler___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__plugins_jquery_formstyler__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -36185,6 +36187,10 @@ var Application = function () {
           var component = new componentClass.default($(element), options);
         }
       });
+
+      $('.js-projects').each(function (index, element) {
+        new __WEBPACK_IMPORTED_MODULE_3__Components_Projects__["default"]($(element));
+      });
     }
   }, {
     key: '_initAssets',
@@ -36244,274 +36250,274 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 var Emitter = function () {
-    function Emitter() {
-        _classCallCheck(this, Emitter);
+  function Emitter() {
+    _classCallCheck(this, Emitter);
 
-        this._itemContainer = new Emitter.ItemContainer();
+    this._itemContainer = new Emitter.ItemContainer();
+  }
+
+  /**
+   * @param {String} eventId
+   * @return {Boolean}
+   * @private
+   */
+
+
+  _createClass(Emitter, [{
+    key: '_isEventIdJustANamespace',
+    value: function _isEventIdJustANamespace(eventId) {
+      eventId = String(eventId);
+
+      return !!eventId.match(/^\.[a-z\d]+$/i);
     }
 
     /**
      * @param {String} eventId
-     * @return {Boolean}
+     * @return {Array} [eventName, namespace]
+     * @throws {Error}
      * @private
      */
 
+  }, {
+    key: '_parseAndValidateEventId',
+    value: function _parseAndValidateEventId(eventId) {
+      eventId = String(eventId);
 
-    _createClass(Emitter, [{
-        key: '_isEventIdJustANamespace',
-        value: function _isEventIdJustANamespace(eventId) {
-            eventId = String(eventId);
+      // Either a single event name.
 
-            return !!eventId.match(/^\.[a-z\d]+$/i);
-        }
+      var match = eventId.match(/^[a-z\d]+$/i);
 
-        /**
-         * @param {String} eventId
-         * @return {Array} [eventName, namespace]
-         * @throws {Error}
-         * @private
-         */
+      if (match) {
+        return [match[0], null];
+      }
 
-    }, {
-        key: '_parseAndValidateEventId',
-        value: function _parseAndValidateEventId(eventId) {
-            eventId = String(eventId);
+      // Or an event name + a namespace name.
 
-            // Either a single event name.
+      match = eventId.match(/^([a-z\d]+)\.([a-z\d]+)$/i);
 
-            var match = eventId.match(/^[a-z\d]+$/i);
+      if (!match) {
+        throw Error('Full event names should not be empty, should consist of letters and numbers' + ' and may contain only single dot in the middle.');
+      }
 
-            if (match) {
-                return [match[0], null];
-            }
+      return [match[1], match[2]];
+    }
 
-            // Or an event name + a namespace name.
+    /**
+     * @param {String} eventId
+     */
 
-            match = eventId.match(/^([a-z\d]+)\.([a-z\d]+)$/i);
+  }, {
+    key: 'trigger',
+    value: function trigger(eventId /*, eventData1, eventData2, ... */) {
+      eventId = String(eventId);
 
-            if (!match) {
-                throw Error('Full event names should not be empty, should consist of letters and numbers' + ' and may contain only single dot in the middle.');
-            }
+      var parts = this._parseAndValidateEventId(eventId);
+      var items = this._itemContainer.getItems(parts[0], parts[1]);
+      var args = Array.prototype.slice.call(arguments, 1);
 
-            return [match[1], match[2]];
-        }
+      __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(items, function (item) {
+        item.callback.apply(null, args);
+      });
+    }
 
-        /**
-         * @param {String} eventId
-         */
+    /**
+     * @param {String} eventId
+     * @param {Function} callback
+     */
 
-    }, {
-        key: 'trigger',
-        value: function trigger(eventId /*, eventData1, eventData2, ... */) {
-            eventId = String(eventId);
+  }, {
+    key: 'on',
+    value: function on(eventId, callback) {
+      if (!callback) {
+        throw Error('An event callback should be provided.');
+      }
 
-            var parts = this._parseAndValidateEventId(eventId);
-            var items = this._itemContainer.getItems(parts[0], parts[1]);
-            var args = Array.prototype.slice.call(arguments, 1);
+      if (!__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isFunction(callback)) {
+        throw Error('An event callback should be a function.');
+      }
 
-            __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(items, function (item) {
-                item.callback.apply(null, args);
-            });
-        }
+      var parts = this._parseAndValidateEventId(eventId);
 
-        /**
-         * @param {String} eventId
-         * @param {Function} callback
-         */
+      this._itemContainer.add(parts[0], parts[1], callback);
+    }
+  }, {
+    key: 'off',
+    value: function off(eventId) {
+      if (!arguments.length) {
+        this._itemContainer.clear();
+        return;
+      }
 
-    }, {
-        key: 'on',
-        value: function on(eventId, callback) {
-            if (!callback) {
-                throw Error('An event callback should be provided.');
-            }
+      eventId = String(eventId);
 
-            if (!__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.isFunction(callback)) {
-                throw Error('An event callback should be a function.');
-            }
+      if (!this._isEventIdJustANamespace(eventId)) {
+        // Event name and possible namespace.
+        var parts = this._parseAndValidateEventId(eventId);
+        this._itemContainer.remove(parts[0], parts[1]);
+      } else {
+        // Just a namespace.
+        this._itemContainer.remove(null, eventId.substr(1));
+      }
+    }
+  }]);
 
-            var parts = this._parseAndValidateEventId(eventId);
-
-            this._itemContainer.add(parts[0], parts[1], callback);
-        }
-    }, {
-        key: 'off',
-        value: function off(eventId) {
-            if (!arguments.length) {
-                this._itemContainer.clear();
-                return;
-            }
-
-            eventId = String(eventId);
-
-            if (!this._isEventIdJustANamespace(eventId)) {
-                // Event name and possible namespace.
-                var parts = this._parseAndValidateEventId(eventId);
-                this._itemContainer.remove(parts[0], parts[1]);
-            } else {
-                // Just a namespace.
-                this._itemContainer.remove(null, eventId.substr(1));
-            }
-        }
-    }]);
-
-    return Emitter;
+  return Emitter;
 }();
 
 /* harmony default export */ __webpack_exports__["a"] = (Emitter);
 
 
 Emitter.ItemContainer = function () {
-    function EmitterItemContainer() {
-        _classCallCheck(this, EmitterItemContainer);
+  function EmitterItemContainer() {
+    _classCallCheck(this, EmitterItemContainer);
 
-        /* Items:
-         *
-         * {
-         *   eventName1: {
-         *     namespace1: [ { callback, *... }, ... ],
-         *     namespace2: [ ... ]
-         *     ...
-         *   },
-         *
-         *   eventName2: { ... }
-         *   ...
-         * }
-         */
-        this._items = {};
+    /* Items:
+     *
+     * {
+     *   eventName1: {
+     *     namespace1: [ { callback, *... }, ... ],
+     *     namespace2: [ ... ]
+     *     ...
+     *   },
+     *
+     *   eventName2: { ... }
+     *   ...
+     * }
+     */
+    this._items = {};
+  }
+
+  /**
+   * @param {String} eventName
+   * @param {String} namespace
+   * @param {Function} callback
+   */
+
+
+  _createClass(EmitterItemContainer, [{
+    key: 'add',
+    value: function add(eventName, namespace, callback) {
+      eventName = String(eventName);
+      namespace = !namespace ? '*' : String(namespace);
+
+      if (!this._items.hasOwnProperty(eventName)) {
+        this._items[eventName] = {};
+      }
+
+      if (!this._items[eventName].hasOwnProperty(namespace)) {
+        this._items[eventName][namespace] = [];
+      }
+
+      this._items[eventName][namespace].push({
+        callback: callback
+      });
     }
 
     /**
      * @param {String} eventName
-     * @param {String} namespace
-     * @param {Function} callback
+     * @param {String}|null namespace
+     * @return {Array}
      */
 
+  }, {
+    key: 'getItems',
+    value: function getItems(eventName, namespace) {
+      eventName = String(eventName);
 
-    _createClass(EmitterItemContainer, [{
-        key: 'add',
-        value: function add(eventName, namespace, callback) {
-            eventName = String(eventName);
-            namespace = !namespace ? '*' : String(namespace);
+      if (!this._items.hasOwnProperty(eventName)) {
+        return [];
+      }
 
-            if (!this._items.hasOwnProperty(eventName)) {
-                this._items[eventName] = {};
-            }
+      if (!namespace) {
+        // Return items for all namespaces of the event.
 
-            if (!this._items[eventName].hasOwnProperty(namespace)) {
-                this._items[eventName][namespace] = [];
-            }
+        var arraysOfItems = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.values(this._items[eventName]);
 
-            this._items[eventName][namespace].push({
-                callback: callback
-            });
+        return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.union.apply(null, arraysOfItems);
+      }
+
+      namespace = String(namespace);
+
+      if (!this._items[eventName].hasOwnProperty(namespace)) {
+        return [];
+      }
+
+      return this._items[eventName][namespace];
+    }
+
+    /**
+     * Removes by event name, by namespace or by both.
+     *
+     * @param {String} eventName
+     * @param {String} namespace
+     */
+
+  }, {
+    key: 'remove',
+    value: function remove(eventName, namespace) {
+      if (!eventName && !namespace) {
+        throw Error('Only one of the arguments can be omitted.');
+      }
+
+      if (!namespace) {
+        this.removeByEventName(eventName);
+      } else if (!eventName) {
+        this.removeByNamespace(namespace);
+      } else {
+        // Both eventName and namespace are not null.
+
+        eventName = String(eventName);
+        namespace = String(namespace);
+
+        if (!this._items.hasOwnProperty(eventName) || !this._items[eventName].hasOwnProperty(namespace)) {
+          return;
         }
 
-        /**
-         * @param {String} eventName
-         * @param {String}|null namespace
-         * @return {Array}
-         */
+        delete this._items[eventName][namespace];
+      }
+    }
 
-    }, {
-        key: 'getItems',
-        value: function getItems(eventName, namespace) {
-            eventName = String(eventName);
+    /**
+     * @param {String} eventName
+     */
 
-            if (!this._items.hasOwnProperty(eventName)) {
-                return [];
-            }
+  }, {
+    key: 'removeByEventName',
+    value: function removeByEventName(eventName) {
+      eventName = String(eventName);
 
-            if (!namespace) {
-                // Return items for all namespaces of the event.
+      if (!this._items.hasOwnProperty(eventName)) {
+        return;
+      }
 
-                var arraysOfItems = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.values(this._items[eventName]);
+      delete this._items[eventName];
+    }
 
-                return __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.union.apply(null, arraysOfItems);
-            }
+    /**
+     * @param {String} namespace
+     */
 
-            namespace = String(namespace);
+  }, {
+    key: 'removeByNamespace',
+    value: function removeByNamespace(namespace) {
+      namespace = String(namespace);
 
-            if (!this._items[eventName].hasOwnProperty(namespace)) {
-                return [];
-            }
-
-            return this._items[eventName][namespace];
+      __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(this._items, function (itemsByNamespace) {
+        if (!itemsByNamespace.hasOwnProperty(namespace)) {
+          return;
         }
 
-        /**
-         * Removes by event name, by namespace or by both.
-         *
-         * @param {String} eventName
-         * @param {String} namespace
-         */
+        delete itemsByNamespace[namespace];
+      });
+    }
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this._items = {};
+    }
+  }]);
 
-    }, {
-        key: 'remove',
-        value: function remove(eventName, namespace) {
-            if (!eventName && !namespace) {
-                throw Error('Only one of the arguments can be omitted.');
-            }
-
-            if (!namespace) {
-                this.removeByEventName(eventName);
-            } else if (!eventName) {
-                this.removeByNamespace(namespace);
-            } else {
-                // Both eventName and namespace are not null.
-
-                eventName = String(eventName);
-                namespace = String(namespace);
-
-                if (!this._items.hasOwnProperty(eventName) || !this._items[eventName].hasOwnProperty(namespace)) {
-                    return;
-                }
-
-                delete this._items[eventName][namespace];
-            }
-        }
-
-        /**
-         * @param {String} eventName
-         */
-
-    }, {
-        key: 'removeByEventName',
-        value: function removeByEventName(eventName) {
-            eventName = String(eventName);
-
-            if (!this._items.hasOwnProperty(eventName)) {
-                return;
-            }
-
-            delete this._items[eventName];
-        }
-
-        /**
-         * @param {String} namespace
-         */
-
-    }, {
-        key: 'removeByNamespace',
-        value: function removeByNamespace(namespace) {
-            namespace = String(namespace);
-
-            __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.each(this._items, function (itemsByNamespace) {
-                if (!itemsByNamespace.hasOwnProperty(namespace)) {
-                    return;
-                }
-
-                delete itemsByNamespace[namespace];
-            });
-        }
-    }, {
-        key: 'clear',
-        value: function clear() {
-            this._items = {};
-        }
-    }]);
-
-    return EmitterItemContainer;
+  return EmitterItemContainer;
 }();
 
 /***/ }),
@@ -42461,6 +42467,8 @@ var map = {
 	"./Modal.js": 73,
 	"./OwlCarousel": 40,
 	"./OwlCarousel.js": 40,
+	"./Projects": 129,
+	"./Projects.js": 129,
 	"./Tabs": 39,
 	"./Tabs.js": 39
 };
@@ -42485,6 +42493,233 @@ webpackContext.id = 123;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Component__ = __webpack_require__(19);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Projects = function (_Component) {
+  _inherits(Projects, _Component);
+
+  function Projects(root, options) {
+    _classCallCheck(this, Projects);
+
+    var _this = _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).call(this, root, options));
+
+    _this.owlCarousel = null;
+    return _this;
+  }
+
+  _createClass(Projects, [{
+    key: 'initialize',
+    value: function initialize() {
+      'use strict';
+
+      _get(Projects.prototype.__proto__ || Object.getPrototypeOf(Projects.prototype), 'initialize', this).call(this);
+    }
+  }, {
+    key: '_cacheNodes',
+    value: function _cacheNodes() {
+      'use strict';
+
+      this.nodes = {
+        project: this.root.find('.js-project')
+      };
+    }
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      'use strict';
+
+      var _this2 = this;
+
+      $(window).on('resize', function () {
+        _this2.width = $(window).width();
+      });
+
+      this.nodes.project.on('click', function (event) {
+        event.preventDefault();
+
+        var currentTarget = $(event.currentTarget);
+
+        if (_this2.root.find('.js-projects-detail').length) {
+          _this2.closeProjectDetail(_this2.root.find('.js-projects-detail'));
+
+          currentTarget.trigger('click');
+
+          return;
+        }
+
+        var _currentTarget$data = currentTarget.data(),
+            project = _currentTarget$data.project;
+
+        //      if (project) {
+
+
+        _this2.prepareProjectDetail(project, currentTarget.index());
+        //      }
+      });
+    }
+  }, {
+    key: '_ready',
+    value: function _ready() {
+      'use strict';
+
+      $(window).trigger('resize');
+    }
+  }, {
+    key: 'initOwlCarousel',
+    value: function initOwlCarousel(element) {
+      this.owlCarousel = element.owlCarousel({
+        loop: true,
+        margin: 0,
+        responsiveClass: true,
+        items: 1
+      });
+    }
+  }, {
+    key: 'destroyOwlCarousel',
+    value: function destroyOwlCarousel() {
+      if (this.owlCarousel) {
+        this.owlCarousel.trigger('destroy.owl.carousel');
+      }
+    }
+  }, {
+    key: 'initProjectDetail',
+    value: function initProjectDetail(element) {
+      if (this.owlCarousel) {
+        this.destroyOwlCarousel();
+      }
+
+      this.initOwlCarousel();
+    }
+  }, {
+    key: 'initLoadImage',
+    value: function initLoadImage(projectsDetail) {
+      var _this3 = this;
+
+      var loaded = 0;
+      var images = projectsDetail.find('img');
+
+      images.each(function (index, element) {
+        var image = new Image();
+
+        image.onload = function () {
+          loaded += 1;
+
+          if (loaded === images.length) {
+            _this3.trigger('imagesLoaded');
+          }
+        };
+
+        image.src = $(element).attr('src');
+      });
+    }
+  }, {
+    key: 'prepareProjectDetail',
+    value: function prepareProjectDetail() {
+      var _this4 = this;
+
+      var project = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var index = arguments[1];
+      var images = project.images,
+          client = project.client,
+          task = project.task;
+
+
+      var owlCarouselTemplate = this._owlCarouselTemplate(images);
+
+      var row = parseInt(index / 3, 10);
+
+      console.log(this.width, this.options.widthStep);
+
+      if (this.width >= this.options.widthStep) {
+        if (row * 3) {
+          $(this._template(owlCarouselTemplate, client, task)).insertAfter(this.nodes.project.eq(row * 3 - 1));
+        } else {
+          $(this._template(owlCarouselTemplate, client, task)).insertBefore(this.nodes.project.eq(row * 3));
+        }
+      } else {
+        $(this._template(owlCarouselTemplate, client, task)).insertAfter(this.nodes.project.eq(index));
+      }
+
+      var projectsDetail = this.root.find('.js-projects-detail');
+      var projectsDetailClear = projectsDetail.siblings('.project-detail_clear');
+
+      this.initLoadImage(projectsDetail);
+
+      this.initOwlCarousel(this.root.find('.js-projects-detail .owl-carousel'));
+
+      this.on('imagesLoaded', function () {
+        var marginBottom = projectsDetail.outerHeight() + 25;
+
+        projectsDetailClear.css({ marginBottom: marginBottom });
+      });
+
+      projectsDetail.on('click', '.js-projects-detail-close', function (event) {
+        event.preventDefault();
+
+        _this4.closeProjectDetail(projectsDetail);
+      });
+    }
+  }, {
+    key: 'closeProjectDetail',
+    value: function closeProjectDetail(element) {
+      this.destroyOwlCarousel();
+
+      element.off();
+      element.parent().remove();
+    }
+  }, {
+    key: '_owlCarouselTemplate',
+    value: function _owlCarouselTemplate(images) {
+      var template = '';
+
+      images.forEach(function (image) {
+        template += '\n        <div class="project-detail__image">\n            <img src="' + image + '" alt="">\n        </div>';
+      });
+
+      return template;
+    }
+  }, {
+    key: '_template',
+    value: function _template(images, client, task) {
+      return '\n      <div class="project-detail-wrap">\n        <div class="project-detail js-projects-detail">\n        <div class="owl-carousel owl-theme">\n          ' + images + '\n        </div>\n        \n        <div class="project-detail__footer">\n          <div class="container">\n            <div class="row">\n              <div class="col-12 col-md-3">\n                <div class="project-detail__title">\u041A\u043B\u0438\u0435\u043D\u0442\u044B</div>\n                <div class="project-detail__description">\n                  ' + client + '\n                </div>\n              </div>\n              <div class="col-12 col-md-6">\n                <div class="project-detail__title">\u0417\u0430\u0434\u0430\u0447\u0430</div>\n                <div class="project-detail__description">\n                  ' + task + '\n                </div>\n              </div>\n              <div class="col-12 col-md-3">\n                <div class="project-detail__close">\n                  <div class="close-button close-button_light js-projects-detail-close">\n                    <div class="close-button-line"></div>\n                    <div class="close-button-line"></div>\n                  </div>  \n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n        <div class="project-detail_clear"></div>\n      </div>\n';
+    }
+  }, {
+    key: '_defaultOptions',
+    get: function get() {
+      'use strict';
+
+      return {
+        widthStep: 768
+      };
+    }
+  }]);
+
+  return Projects;
+}(__WEBPACK_IMPORTED_MODULE_0__Component__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Projects);
 
 /***/ })
 /******/ ]);
