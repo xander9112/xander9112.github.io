@@ -12,11 +12,11 @@
 	  color: $--color-text-primary;
 
 	  &:hover {
-		border: 1px solid $--color-text-primary;
+		border-color: $--color-text-primary;
 	  }
 
-	  .active {
-		border: 1px solid $--color-main;
+	  &.active {
+		border-color: $--color-main;
 	  }
 	}
   }

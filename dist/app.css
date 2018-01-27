@@ -16071,11 +16071,11 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .projects__filter a:hover {
-  border: 1px solid #30373b;
+  border-color: #30373b;
 }
 
-.projects__filter a .active {
-  border: 1px solid #997034;
+.projects__filter a.active {
+  border-color: #997034;
 }
 
 .projects__inner {
