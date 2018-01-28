@@ -105,12 +105,14 @@ body {
 	  font-size: 10px;
 	  color: $--color-gray-light;
 	  text-transform: uppercase;
+	  letter-spacing: 2px;
 	}
 
 	a {
 	  margin-top: 50px;
 	  color: $--color-gray-light;
 	  text-decoration: underline;
+	  letter-spacing: 2px;
 	}
   }
 }

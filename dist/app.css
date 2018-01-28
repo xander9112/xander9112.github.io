@@ -16684,12 +16684,14 @@ body {
   font-size: 10px;
   color: #bcbbbc;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .p-page__not-found a {
   margin-top: 50px;
   color: #bcbbbc;
   text-decoration: underline;
+  letter-spacing: 2px;
 }
 
 .clearfix:after {
