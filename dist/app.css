@@ -16195,6 +16195,10 @@ select.form-control-lg:not([size]):not([multiple]),
   margin-bottom: 20px;
 }
 
+.projects__links .file {
+  margin-bottom: 15px;
+}
+
 .project {
   position: relative;
   cursor: pointer;
