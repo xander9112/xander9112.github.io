@@ -16260,7 +16260,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .project-detail .owl-dots {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -16288,6 +16288,17 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .project-detail .owl-dots .owl-dot.active {
   background: #30373b;
+}
+
+.project-detail__image {
+  height: 190px;
+  overflow: hidden;
+}
+
+.project-detail__image img {
+  width: 120% !important;
+  margin-left: -10%;
+  height: 100%;
 }
 
 .project-detail__footer {
@@ -16325,11 +16336,23 @@ select.form-control-lg:not([size]):not([multiple]),
   .project-detail .owl-dots {
     max-width: 540px;
   }
+
+  .project-detail__image {
+    height: auto;
+    overflow: hidden;
+  }
+
+  .project-detail__image img {
+    width: 100% !important;
+    margin-left: 0;
+    height: auto;
+  }
 }
 
 @media (min-width: 768px) {
   .project-detail .owl-dots {
     max-width: 720px;
+    bottom: 40px;
   }
 }
 

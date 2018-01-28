@@ -91,7 +91,7 @@
 
   .owl-dots {
 	position: absolute;
-	bottom: 40px;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -113,6 +113,17 @@
 	  &.active {
 		background: $--color-text-primary;
 	  }
+	}
+  }
+
+  &__image {
+	height: 190px;
+	overflow: hidden;
+
+	img {
+	  width: 120% !important;
+	  margin-left: -10%;
+	  height: 100%;
 	}
   }
 
@@ -151,11 +162,23 @@
 	.owl-dots {
 	  max-width: 540px;
 	}
+
+	&__image {
+	  height: auto;
+	  overflow: hidden;
+
+	  img {
+		width: 100% !important;
+		margin-left: 0;
+		height: auto;
+	  }
+	}
   }
 
   @media (min-width: $--breakpoin-md) {
 	.owl-dots {
 	  max-width: 720px;
+	  bottom: 40px;
 	}
   }
 
