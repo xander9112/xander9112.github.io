@@ -16072,6 +16072,7 @@ select.form-control-lg:not([size]):not([multiple]),
   margin-left: 0;
   margin-right: 20px;
   color: #30373b;
+  border-bottom: 1px solid transparent;
 }
 
 .contacts__page .social-links {
