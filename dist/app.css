@@ -14299,6 +14299,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .form-group_error label.error {
+  display: none !important;
   line-height: 1;
   letter-spacing: 1.5px;
   font-size: 12px;

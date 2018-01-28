@@ -51,7 +51,6 @@ export default class Application {
         },
 
         showErrors: function (errorMap, errorList) {
-
           if (this.numberOfInvalids()) {
             formObject.find('.js-error-content').html('Некорректные данные')
           } else {

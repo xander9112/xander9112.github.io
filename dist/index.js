@@ -36329,7 +36329,6 @@ var Application = function () {
         },
 
         showErrors: function showErrors(errorMap, errorList) {
-
           if (this.numberOfInvalids()) {
             formObject.find('.js-error-content').html('Некорректные данные');
           } else {
