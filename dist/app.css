@@ -16317,6 +16317,10 @@ select.form-control-lg:not([size]):not([multiple]),
           justify-content: flex-end;
 }
 
+.project-detail__close .close-button:hover .close-button-line {
+  background: #fff;
+}
+
 @media (min-width: 576px) {
   .project-detail .owl-dots {
     max-width: 540px;
@@ -16778,6 +16782,10 @@ a:hover {
 
 a.dark {
   color: #30373b;
+}
+
+a.dark:hover {
+  color: #997034;
 }
 
 form .btn[type="submit"] {

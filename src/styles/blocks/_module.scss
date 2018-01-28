@@ -204,6 +204,10 @@ a {
 
   &.dark {
 	color: $--color-text-primary;
+
+	&:hover {
+	  color: $--color-main;
+	}
   }
 }
 

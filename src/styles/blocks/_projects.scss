@@ -137,6 +137,14 @@
   &__close {
 	display: flex;
 	justify-content: flex-end;
+
+	.close-button {
+	  &:hover {
+		.close-button-line {
+		  background: $--color-white;
+		}
+	  }
+	}
   }
 
   @media (min-width: $--breakpoin-sm) {
