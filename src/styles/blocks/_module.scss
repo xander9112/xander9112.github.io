@@ -63,6 +63,8 @@ body {
 }
 
 .file {
+  display: flex;
+  align-items: flex-end;
   text-decoration: underline;
   color: $--color-text-primary;
 
@@ -168,7 +170,6 @@ body {
 }
 
 a {
-  display: flex;
   text-transform: uppercase;
   font-family: $--font-lato-regular;
   font-size: 12px;
@@ -210,6 +211,10 @@ form {
 	text-transform: uppercase;
 	padding: 0;
 	letter-spacing: 2px;
+
+	.fa {
+	  margin-left: 20px;
+	}
   }
 
   .btn_dark[type="submit"] {

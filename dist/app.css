@@ -16059,6 +16059,9 @@ select.form-control-lg:not([size]):not([multiple]),
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   font-size: 10px;
   text-decoration: underline;
   margin: 5px 0;
@@ -16471,7 +16474,12 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .file {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-bottom: 3px;
 }
 
@@ -16605,6 +16613,12 @@ body {
 }
 
 .file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   text-decoration: underline;
   color: #30373b;
 }
@@ -16719,9 +16733,6 @@ body {
 }
 
 a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   text-transform: uppercase;
   font-family: "LatoRegular";
   font-size: 12px;
@@ -16757,6 +16768,10 @@ form .btn[type="submit"] {
   text-transform: uppercase;
   padding: 0;
   letter-spacing: 2px;
+}
+
+form .btn[type="submit"] .fa {
+  margin-left: 20px;
 }
 
 form .btn_dark[type="submit"] {
