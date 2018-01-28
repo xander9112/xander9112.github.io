@@ -15808,10 +15808,6 @@ select.form-control-lg:not([size]):not([multiple]),
   letter-spacing: 2px;
 }
 
-.footer form .btn[type="submit"] .fa {
-  margin-left: 10px;
-}
-
 .footer form .btn[type="submit"]:hover {
   color: #997034;
 }
