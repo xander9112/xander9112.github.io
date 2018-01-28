@@ -16133,6 +16133,11 @@ select.form-control-lg:not([size]):not([multiple]),
     font-size: 18px;
   }
 
+  .contacts__page .contacts__item .fa-mobile {
+    margin-left: 3px;
+    margin-right: 16px;
+  }
+
   .contacts__page .contacts__item .fa-phone {
     font-size: 16px;
   }
@@ -16624,8 +16629,10 @@ body {
 }
 
 .file .fa {
+  font-size: 14px;
   margin-left: 0;
   margin-right: 10px;
+  border-bottom: 1px solid transparent;
 }
 
 .p-page {
