@@ -9,7 +9,7 @@
 	.page-title {
 	  font-size: 30px;
 	  text-align: center;
-	  margin-top: 40px;
+	  margin-top: 60px;
 	}
 
 	.contacts {
@@ -50,12 +50,13 @@
 	  }
 
 	  &__file {
+		display: flex;
 		font-size: 10px;
 		text-decoration: underline;
 		margin: 5px 0;
 
 		&:first-child {
-		  margin-bottom: 60px;
+		  margin-bottom: 20px;
 		}
 
 		.fa {
@@ -87,8 +88,8 @@
 
 	@media (min-width: $--breakpoin-md) {
 	  padding-top: 40px;
-	  padding-bottom: 40px;
-	  background-position: 50% 0%;
+	  padding-bottom: 280px;
+	  background-position: 50% 0;
 
 	  .page-title {
 		margin-top: 0;
@@ -111,13 +112,15 @@
 
 		  .fa {
 			margin: 0;
+			margin-right: 15px;
+			font-size: 18px;
 
 			&-phone {
-			  font-size: 13px;
+			  font-size: 16px;
 			}
 
 			&-envelope {
-			  font-size: 13px;
+			  font-size: 12px;
 			}
 		  }
 		}

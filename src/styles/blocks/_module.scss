@@ -199,6 +199,10 @@ form {
 
   .btn_dark[type="submit"] {
 	color: $--color-text-primary;
+
+	&:hover {
+	  color: $--color-main;
+	}
   }
 }
 

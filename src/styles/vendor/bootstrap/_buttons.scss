@@ -146,6 +146,14 @@ input[type="button"] {
 }
 
 .btn {
+  &_dark {
+	color: $--color-text-primary;
+
+	&:hover {
+	  color: $--color-main;
+	}
+  }
+
   &-primary {
 	&:not(:disabled):not(.disabled):active:focus,
 	&:not(:disabled):not(.disabled).active:focus,

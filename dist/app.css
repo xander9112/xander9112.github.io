@@ -14013,6 +14013,14 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.btn_dark {
+  color: #30373b;
+}
+
+.btn_dark:hover {
+  color: #997034;
+}
+
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
@@ -14056,7 +14064,7 @@ input[type="button"].btn-block {
   padding: 0.775rem 0 0.775rem 0;
   font-size: 10px;
   line-height: 1.5;
-  color: #fff;
+  color: #30373b;
   background-color: transparent;
   background-clip: padding-box;
   border: none;
@@ -14078,7 +14086,7 @@ input[type="button"].btn-block {
 }
 
 .form-control:focus {
-  color: #fff;
+  color: #30373b;
   background-color: transparent;
   border-color: transparent;
   border-bottom: 1px solid #997034;
@@ -14129,6 +14137,14 @@ input[type="button"].btn-block {
 .form-control.error:focus {
   color: #cc0000;
   border-bottom-color: #cc0000;
+}
+
+form.dark .form-control {
+  color: #fff;
+}
+
+form.dark .form-control:focus {
+  color: #fff;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -15956,7 +15972,7 @@ select.form-control-lg:not([size]):not([multiple]),
 .contacts__page .page-title {
   font-size: 30px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .contacts__page .contacts__inner {
@@ -16015,13 +16031,16 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .contacts__page .contacts__file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 10px;
   text-decoration: underline;
   margin: 5px 0;
 }
 
 .contacts__page .contacts__file:first-child {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .contacts__page .contacts__file .fa {
@@ -16054,8 +16073,8 @@ select.form-control-lg:not([size]):not([multiple]),
 @media (min-width: 768px) {
   .contacts__page {
     padding-top: 40px;
-    padding-bottom: 40px;
-    background-position: 50% 0%;
+    padding-bottom: 280px;
+    background-position: 50% 0;
   }
 
   .contacts__page .page-title {
@@ -16082,14 +16101,16 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .contacts__page .contacts__item .fa {
     margin: 0;
+    margin-right: 15px;
+    font-size: 18px;
   }
 
   .contacts__page .contacts__item .fa-phone {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .contacts__page .contacts__item .fa-envelope {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .contacts__page .social-links {
@@ -16702,6 +16723,10 @@ form .btn[type="submit"] {
 
 form .btn_dark[type="submit"] {
   color: #30373b;
+}
+
+form .btn_dark[type="submit"]:hover {
+  color: #997034;
 }
 
 @media (min-width: 768px) {
