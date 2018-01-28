@@ -16105,6 +16105,10 @@ select.form-control-lg:not([size]):not([multiple]),
     margin-top: 0;
   }
 
+  .contacts__page .contacts__files {
+    margin-top: 40px;
+  }
+
   .contacts__page .contacts__file {
     font-size: 10px;
   }
