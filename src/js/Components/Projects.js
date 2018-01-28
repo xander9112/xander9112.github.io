@@ -69,7 +69,10 @@ export default class Projects extends Component {
       loop: true,
       margin: 0,
       responsiveClass: true,
-      items: 1
+      items: 1,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true
     })
   }
 

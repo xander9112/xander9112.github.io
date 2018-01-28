@@ -43,9 +43,21 @@ body {
 	}
   }
 
+  &:hover {
+	&-line {
+	  background: $--color-main;
+	}
+  }
+
   &_light {
 	.close-button-line {
 	  background: $--color-main;
+	}
+
+	&:hover {
+	  .close-button-line {
+		background: $--color-text-primary;
+	  }
 	}
   }
 }
@@ -156,12 +168,15 @@ body {
 }
 
 a {
+  display: flex;
   text-transform: uppercase;
   font-family: $--font-lato-regular;
   font-size: 12px;
   letter-spacing: 2px;
+  line-height: 1.4;
 
   .fa {
+	margin-top: 3px;
 	font-size: 10px;
 	margin-left: 20px;
   }
