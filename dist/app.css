@@ -16300,7 +16300,7 @@ select.form-control-lg:not([size]):not([multiple]),
   min-width: 100%;
   width: auto !important;
   height: 100%;
-  margin-left: -35%;
+  margin-left: -45%;
 }
 
 .project-detail__footer {
