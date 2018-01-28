@@ -14147,9 +14147,9 @@ form .error-content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "LatoRegular";
   text-transform: uppercase;
   color: #cc0000;
+  font-family: "LatoRegular";
   font-size: 12px;
   letter-spacing: 1.5px;
 }
@@ -14301,7 +14301,8 @@ select.form-control-lg:not([size]):not([multiple]),
 .form-group_error label.error {
   line-height: 1;
   letter-spacing: 1.5px;
-  font-size: 10px;
+  font-size: 12px;
+  font-family: "LatoRegular";
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 0;
