@@ -16015,24 +16015,27 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .contacts__page .contacts__file {
-  font-size: 18px;
+  font-size: 10px;
   text-decoration: underline;
   margin: 5px 0;
 }
 
 .contacts__page .contacts__file:first-child {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 
 .contacts__page .contacts__file .fa {
+  font-size: 14px;
   margin-left: 0;
+  margin-right: 20px;
+  color: #30373b;
 }
 
 .contacts__page .social-links {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 20px 0;
+  margin: 20px 0 10px;
 }
 
 .contacts__page .social-links a {
