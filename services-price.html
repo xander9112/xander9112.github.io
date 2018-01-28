@@ -238,7 +238,8 @@
 						</div>
 						<div class="row align-items-end">
 							<div class="col-12 col-md-6 col-lg-4">
-								<button type="submit" class="btn btn-primary btn_full-width">
+								<button type="submit" class="btn btn-primary btn_full-width" data-toggle="modal"
+								        data-target="#CommercialOffer">
 									Оставить заявку <i class="fa fa-chevron-right"></i>
 								</button>
 							</div>
@@ -344,8 +345,10 @@
 								<div class="col-12 col-md-6">
 									<div class="error-content js-error-content"></div>
 								</div>
-								<div class="col-12 col-md-6 text-right">
-									<button type="submit" class="btn">Оставить заявку <i class="fa fa-chevron-right"></i></button>
+								<div class="col-12 col-md-6 text-right" data-toggle="modal" data-target="#CommercialOffer">
+									<button type="submit" class="btn">
+										Оставить заявку <i class="fa fa-chevron-right"></i>
+									</button>
 								</div>
 							</div>
 						</form>
@@ -368,6 +371,81 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="modal fade" id="CommercialOffer" tabindex="-1" role="dialog" aria-labelledby="CommercialOfferLabel"
+	     aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Оставить запрос</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<div class="close-button close-button_light">
+							<div class="close-button-line"></div>
+							<div class="close-button-line"></div>
+						</div>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" class="js-form">
+						<div class="row">
+							<div class="col-12">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Ваше имя">
+								</div>
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<input type="text" name="phone" class="form-control js-phone" placeholder="Ваш номер">
+								</div>
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="E-mail">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="form-group">
+									<textarea class="form-control" placeholder="Ваш комментарий" rows="2"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								&nbsp;
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="error-content js-error-content"></div>
+							</div>
+							<div class="col-12 col-md-6 text-right">
+								<button type="submit" class="btn btn_dark">
+									Оставить заявку <i class="fa fa-chevron-right"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script src="./dist/index.js?time=afafs"></script>
