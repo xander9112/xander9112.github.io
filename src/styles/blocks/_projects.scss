@@ -121,9 +121,11 @@
 	overflow: hidden;
 
 	img {
-	  width: 120% !important;
-	  margin-left: -10%;
+	  display: block;
+	  min-width: 100%;
+	  width: auto !important;
 	  height: 100%;
+	  margin-left: -35%;
 	}
   }
 
