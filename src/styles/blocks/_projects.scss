@@ -161,6 +161,14 @@
 	}
   }
 
+  @media (min-width: 419px) {
+	&__image {
+	  img {
+		margin-left: -25%;
+	  }
+	}
+  }
+
   @media (min-width: $--breakpoin-sm) {
 	.owl-dots {
 	  max-width: 540px;

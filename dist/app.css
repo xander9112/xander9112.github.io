@@ -15389,6 +15389,10 @@ select.form-control-lg:not([size]):not([multiple]),
   margin-bottom: 10px;
 }
 
+.left-nav__item ul li:last-child {
+  margin-bottom: 32px;
+}
+
 .left-nav__item_active ul {
   display: block;
 }
@@ -16335,6 +16339,12 @@ select.form-control-lg:not([size]):not([multiple]),
   background: #fff;
 }
 
+@media (min-width: 419px) {
+  .project-detail__image img {
+    margin-left: -25%;
+  }
+}
+
 @media (min-width: 576px) {
   .project-detail .owl-dots {
     max-width: 540px;
@@ -16393,6 +16403,12 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .modal-body {
   padding: 20px 50px;
+}
+
+.services__categories > .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .services_page {
@@ -16552,6 +16568,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services__category-item-title {
+  font-family: "OranienBaumRegular";
   font-size: 14px;
   text-transform: uppercase;
   margin-top: 10px;
@@ -16584,6 +16601,14 @@ select.form-control-lg:not([size]):not([multiple]),
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+}
+
+@media (min-width: 576px) {
+  .services__categories > .row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 @media (min-width: 768px) {
