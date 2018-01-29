@@ -14064,6 +14064,12 @@ input[type="button"].btn-block {
           justify-content: center;
 }
 
+@media (min-width: 1200px) {
+  .btn .fa {
+    margin-left: 20px;
+  }
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -16632,6 +16638,10 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 768px) {
+  .services__content {
+    margin-bottom: 45px;
+  }
+
   .services_page .services__price {
     margin-top: 0;
     margin-bottom: 0;
@@ -16647,10 +16657,6 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .services_page .services_prices .service__price-body {
     max-width: 60%;
-  }
-
-  .services_page .services__works-link {
-    margin-top: 0;
   }
 
   .services_page .file {

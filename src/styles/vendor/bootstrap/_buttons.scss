@@ -194,4 +194,10 @@ input[type="button"] {
   &_center {
 	justify-content: center;
   }
+
+  @media (min-width: $--breakpoin-xl) {
+	.fa {
+	  margin-left: 20px;
+	}
+  }
 }
