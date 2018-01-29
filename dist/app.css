@@ -16476,6 +16476,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .services_prices {
+  margin-top: 80px;
   margin-bottom: 50px;
 }
 
