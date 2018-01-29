@@ -19,7 +19,7 @@
 		display: flex;
 		font-size: 34px;
 		color: $--color-main;
-		margin: 50px 0 20px;
+		margin: 30px 0 40px;
 		justify-content: center;
 
 		&-from {
@@ -121,10 +121,10 @@
 	.file {
 	  display: flex;
 	  align-items: flex-start;
-	  margin-bottom: 3px;
+	  margin-bottom: 10px;
 	  margin-top: 0;
+	  font-size: 10px;
 	}
-
   }
 
   &__content {
@@ -186,6 +186,7 @@
 	  .services {
 		&__price {
 		  margin-top: 0;
+		  margin-bottom: 0;
 		  font-size: 24px;
 		  justify-content: flex-end;
 
@@ -209,6 +210,10 @@
 		&__works-link {
 		  margin-top: 0;
 		}
+	  }
+
+	  .file {
+		font-size: 14px;
 	  }
 	}
 

@@ -16439,7 +16439,7 @@ select.form-control-lg:not([size]):not([multiple]),
   display: flex;
   font-size: 34px;
   color: #997034;
-  margin: 50px 0 20px;
+  margin: 30px 0 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -16559,8 +16559,9 @@ select.form-control-lg:not([size]):not([multiple]),
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   margin-top: 0;
+  font-size: 10px;
 }
 
 .services__content p {
@@ -16633,6 +16634,7 @@ select.form-control-lg:not([size]):not([multiple]),
 @media (min-width: 768px) {
   .services_page .services__price {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 24px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -16649,6 +16651,10 @@ select.form-control-lg:not([size]):not([multiple]),
 
   .services_page .services__works-link {
     margin-top: 0;
+  }
+
+  .services_page .file {
+    font-size: 14px;
   }
 
   .services__works-link {
