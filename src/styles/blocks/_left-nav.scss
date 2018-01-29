@@ -8,7 +8,7 @@
 
 	a {
 	  display: flex;
-	  justify-content: center;
+	  justify-content: space-between;
 	  align-items: center;
 	  padding: 20px 0;
 	  font-family: $--font-oranien-baum-regular;
@@ -26,6 +26,10 @@
 
 	  .btn {
 		width: 100%;
+	  }
+
+	  &-center {
+		justify-content: center;
 	  }
 
 	  .fa {

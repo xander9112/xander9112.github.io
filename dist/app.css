@@ -14058,6 +14058,12 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.btn_center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -15331,9 +15337,9 @@ select.form-control-lg:not([size]):not([multiple]),
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -15358,6 +15364,12 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .left-nav__item_btn .btn {
   width: 100%;
+}
+
+.left-nav__item_btn-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .left-nav__item_btn .fa {
@@ -16476,7 +16488,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .services_prices {
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 50px;
 }
 
