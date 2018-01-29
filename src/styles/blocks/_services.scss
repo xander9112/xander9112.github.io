@@ -182,6 +182,10 @@
   }
 
   @media (min-width: $--breakpoin-md) {
+	&__content{
+	  margin-bottom: 45px;
+	}
+
 	&_page {
 	  .services {
 		&__price {
