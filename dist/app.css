@@ -16532,9 +16532,9 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .services_prices .service__price-body {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-family: "LatoRegular";
-  font-size: 12px;
+  font-size: 10px;
   color: #959595;
   letter-spacing: 2px;
   text-transform: uppercase;
