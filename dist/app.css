@@ -16615,6 +16615,7 @@ select.form-control-lg:not([size]):not([multiple]),
   font-size: 20px;
   color: #30373b;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .services__works-link {
@@ -16641,6 +16642,10 @@ select.form-control-lg:not([size]):not([multiple]),
 @media (min-width: 768px) {
   .services__content {
     margin-bottom: 45px;
+  }
+
+  .services__works-title {
+    text-align: left;
   }
 
   .services_page .services__price {
