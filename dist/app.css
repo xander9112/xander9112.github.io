@@ -16480,7 +16480,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .services_prices .service__price {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-bottom: 1px solid #997034;
   padding-bottom: 5px;
 }
@@ -16520,7 +16520,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .services_page .services_prices .service__price-body {
   font-family: "LatoRegular";
-  font-size: 10px;
+  font-size: 14px;
   color: #959595;
   letter-spacing: 2px;
 }
@@ -16799,6 +16799,10 @@ body {
 
 .margin_top {
   margin-top: 20px;
+}
+
+.margin_top_big {
+  margin-top: 50px;
 }
 
 .p-main {

@@ -166,6 +166,10 @@ body {
 .margin {
   &_top {
 	margin-top: 20px;
+
+	&_big {
+	  margin-top: 50px;
+	}
   }
 }
 
