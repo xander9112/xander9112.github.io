@@ -16494,7 +16494,7 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .services_page .services_prices {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 50px;
 }
 
@@ -16548,6 +16548,7 @@ select.form-control-lg:not([size]):not([multiple]),
 
 .services_page .services__works-link {
   margin-top: 30px;
+  font-size: 12px;
 }
 
 .services_page .service-card {
@@ -16660,7 +16661,7 @@ select.form-control-lg:not([size]):not([multiple]),
   }
 
   .services_page .file {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .services__works-link {
