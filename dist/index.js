@@ -36329,7 +36329,8 @@ var Application = function () {
             required: true,
             email: true
           },
-          'name': 'required'
+          'name': 'required',
+          'phone': 'required'
         },
 
         showErrors: function showErrors(errorMap, errorList) {

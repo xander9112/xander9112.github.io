@@ -45,7 +45,8 @@ export default class Application {
             required: true,
             email: true
           },
-          'name': 'required'
+          'name': 'required',
+          'phone': 'required'
         },
 
         showErrors: function (errorMap, errorList) {
