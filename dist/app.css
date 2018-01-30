@@ -16627,6 +16627,7 @@ select.form-control-lg:not([size]):not([multiple]),
   color: #30373b;
   text-transform: uppercase;
   text-align: center;
+  line-height: 1;
 }
 
 .services__works-link {
