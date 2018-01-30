@@ -6222,6 +6222,10 @@ var Projects = function (_Component) {
         autoplayTimeout: 5000,
         autoplayHoverPause: true
       });
+
+      element.find('img').each(function (index, element) {
+        $(element).addClass('js-center-image');
+      });
     }
   }, {
     key: 'destroyOwlCarousel',
@@ -6298,6 +6302,8 @@ var Projects = function (_Component) {
         var marginBottom = projectsDetail.outerHeight() + 25;
 
         projectsDetailClear.css({ marginBottom: marginBottom });
+
+        $(window).trigger('resize');
       });
 
       projectsDetail.on('click', '.js-projects-detail-close', function (event) {
@@ -36290,8 +36296,6 @@ var Application = function () {
     _classCallCheck(this, Application);
 
     this._initComponents();
-    //    TODO: УДАЛИТЬ!!!!
-    this._initAssets();
 
     $('input, select').styler();
 
@@ -36371,6 +36375,8 @@ var Application = function () {
   _createClass(Application, [{
     key: '_initComponents',
     value: function _initComponents() {
+      var _this = this;
+
       $('.js-services-carousel').each(function (index, element) {
         new __WEBPACK_IMPORTED_MODULE_1__Components_OwlCarousel__["default"]($(element));
       });
@@ -36414,15 +36420,31 @@ var Application = function () {
       $('.js-projects').each(function (index, element) {
         new __WEBPACK_IMPORTED_MODULE_3__Components_Projects__["default"]($(element));
       });
+
+      $(window).on('resize', function () {
+        setTimeout(function () {
+          _this.centeredImages();
+        }, 100);
+      });
+
+      $(window).trigger('resize');
     }
   }, {
-    key: '_initAssets',
-    value: function _initAssets() {
-      //    if (location.host === 'xander9112.github.io') {
-      $('html').find('[rel="stylesheet"]').attr('href', './dist/app.css?time=' + +new Date());
-      //    }
+    key: 'centeredImages',
+    value: function centeredImages() {
+      if ($('.js-center-image').length) {
+        $('.js-center-image').each(function (index, element) {
+          var image = $(element);
+          var parent = image.parent();
+          var marginLeft = image.width() > parent.width() ? (image.width() - parent.width()) / 2 : 0;
 
-      //    $('.main-slider__footer-title').html($(window).width())
+          image.css({
+            width: 'auto',
+            float: 'left',
+            marginLeft: '-' + marginLeft + 'px'
+          });
+        });
+      }
     }
   }]);
 

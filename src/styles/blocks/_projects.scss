@@ -117,15 +117,13 @@
   }
 
   &__image {
-	height: 190px;
 	overflow: hidden;
 
 	img {
 	  display: block;
 	  min-width: 100%;
 	  width: auto !important;
-	  height: 100%;
-	  margin-left: -45%;
+	  height: 192px;
 	}
   }
 
@@ -164,7 +162,7 @@
   @media (min-width: 419px) {
 	&__image {
 	  img {
-		margin-left: -25%;
+
 	  }
 	}
   }
@@ -175,13 +173,8 @@
 	}
 
 	&__image {
-	  height: auto;
-	  overflow: hidden;
-
 	  img {
-		width: 100% !important;
-		margin-left: 0;
-		height: auto;
+		height: 300px;
 	  }
 	}
   }
@@ -191,11 +184,23 @@
 	  max-width: 720px;
 	  bottom: 40px;
 	}
+
+	&__image {
+	  img {
+		height: 452px;
+	  }
+	}
   }
 
   @media (min-width: $--breakpoin-lg) {
 	.owl-dots {
 	  max-width: 960px;
+	}
+
+	&__image {
+	  img {
+		height: auto;
+	  }
 	}
   }
 

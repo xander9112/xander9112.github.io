@@ -15230,11 +15230,6 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 768px) {
-  .main-slider__image {
-    -webkit-transform: translateX(75%);
-            transform: translateX(75%);
-  }
-
   .main-slider__footer-title {
     font-size: 30px;
     text-align: left;
@@ -15275,12 +15270,6 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 992px) {
-  .main-slider__image {
-    position: relative;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-  }
-
   .main-slider__footer-title {
     font-size: 37px;
   }
@@ -15300,11 +15289,6 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 @media (min-width: 1200px) {
-  .main-slider__image {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-
   .main-slider__footer-title {
     font-size: 30px;
   }
@@ -16313,7 +16297,6 @@ select.form-control-lg:not([size]):not([multiple]),
 }
 
 .project-detail__image {
-  height: 190px;
   overflow: hidden;
 }
 
@@ -16321,8 +16304,7 @@ select.form-control-lg:not([size]):not([multiple]),
   display: block;
   min-width: 100%;
   width: auto !important;
-  height: 100%;
-  margin-left: -45%;
+  height: 192px;
 }
 
 .project-detail__footer {
@@ -16357,26 +16339,13 @@ select.form-control-lg:not([size]):not([multiple]),
   background: #fff;
 }
 
-@media (min-width: 419px) {
-  .project-detail__image img {
-    margin-left: -25%;
-  }
-}
-
 @media (min-width: 576px) {
   .project-detail .owl-dots {
     max-width: 540px;
   }
 
-  .project-detail__image {
-    height: auto;
-    overflow: hidden;
-  }
-
   .project-detail__image img {
-    width: 100% !important;
-    margin-left: 0;
-    height: auto;
+    height: 300px;
   }
 }
 
@@ -16385,11 +16354,19 @@ select.form-control-lg:not([size]):not([multiple]),
     max-width: 720px;
     bottom: 40px;
   }
+
+  .project-detail__image img {
+    height: 452px;
+  }
 }
 
 @media (min-width: 992px) {
   .project-detail .owl-dots {
     max-width: 960px;
+  }
+
+  .project-detail__image img {
+    height: auto;
   }
 }
 

@@ -74,6 +74,10 @@ export default class Projects extends Component {
       autoplayTimeout: 5000,
       autoplayHoverPause: true
     })
+
+    element.find('img').each((index, element) => {
+      $(element).addClass('js-center-image')
+    })
   }
 
   destroyOwlCarousel () {
@@ -138,6 +142,8 @@ export default class Projects extends Component {
       const marginBottom = projectsDetail.outerHeight() + 25
 
       projectsDetailClear.css({marginBottom})
+
+      $(window).trigger('resize')
     })
 
     projectsDetail.on('click', '.js-projects-detail-close', (event) => {

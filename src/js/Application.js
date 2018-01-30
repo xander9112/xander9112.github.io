@@ -12,8 +12,6 @@ import './plugins/jquery.formstyler'
 export default class Application {
   constructor () {
     this._initComponents()
-    //    TODO: УДАЛИТЬ!!!!
-    this._initAssets()
 
     $('input, select').styler()
 
@@ -134,13 +132,29 @@ export default class Application {
     $('.js-projects').each((index, element) => {
       new Projects($(element))
     })
+
+    $(window).on('resize', () => {
+      setTimeout(() => {
+        this.centeredImages()
+      }, 100)
+    })
+
+    $(window).trigger('resize')
   }
 
-  _initAssets () {
-    //    if (location.host === 'xander9112.github.io') {
-    $('html').find('[rel="stylesheet"]').attr('href', `./dist/app.css?time=${+new Date()}`)
-    //    }
+  centeredImages () {
+    if ($('.js-center-image').length) {
+      $('.js-center-image').each((index, element) => {
+        const image = $(element)
+        const parent = image.parent()
+        const marginLeft = image.width() > parent.width() ? (image.width() - parent.width()) / 2 : 0
 
-    //    $('.main-slider__footer-title').html($(window).width())
+        image.css({
+          width: 'auto',
+          float: 'left',
+          marginLeft: `-${marginLeft}px`
+        })
+      })
+    }
   }
 }
