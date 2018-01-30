@@ -15995,6 +15995,10 @@ select.form-control-lg:not([size]):not([multiple]),
     margin-top: 25px;
   }
 
+  .reviews__inner-next {
+    margin-bottom: 2px;
+  }
+
   .reviews-item {
     text-align: left;
   }
