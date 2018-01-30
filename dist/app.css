@@ -69,12 +69,33 @@
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
-input:-webkit-autofill:focus input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  border-bottom: 1px solid #997034;
+  -webkit-text-fill-color: #30373b;
+  background-color: transparent;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+form.dark input:-webkit-autofill,
+form.dark input:-webkit-autofill:hover,
+form.dark input:-webkit-autofill:focus,
+form.dark input:-webkit-autofill,
+form.dark textarea:-webkit-autofill,
+form.dark textarea:-webkit-autofill:hover,
+form.dark textarea:-webkit-autofill:focus,
+form.dark select:-webkit-autofill,
+form.dark select:-webkit-autofill:hover,
+form.dark select:-webkit-autofill:focus {
   border: 1px solid transparent;
   border-bottom: 1px solid #997034;
   -webkit-text-fill-color: #fff;
@@ -15370,6 +15391,10 @@ select.form-control-lg:not([size]):not([multiple]),
   text-decoration: none;
 }
 
+.left-nav__item:hover > a {
+  color: #997034;
+}
+
 .left-nav__item:last-of-type {
   border-bottom-color: transparent;
 }
@@ -15389,6 +15414,10 @@ select.form-control-lg:not([size]):not([multiple]),
   padding: 2px 0;
   margin-left: 20px;
   margin-bottom: 10px;
+}
+
+.left-nav__item ul li a:hover {
+  color: #997034;
 }
 
 .left-nav__item ul li:last-child {

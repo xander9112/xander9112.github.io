@@ -40,6 +40,10 @@
 
 	&:hover {
 	  text-decoration: none;
+
+	  & > a {
+		color: $--color-main;
+	  }
 	}
 
 	&:last-of-type {
@@ -60,6 +64,10 @@
 		  padding: 2px 0;
 		  margin-left: 20px;
 		  margin-bottom: 10px;
+
+		  &:hover {
+			color: $--color-main;
+		  }
 		}
 
 		&:last-child {
