@@ -16643,6 +16643,10 @@ select.form-control-lg:not([size]):not([multiple]),
   width: 100%;
 }
 
+.services__works-link .fa {
+  margin-top: 0;
+}
+
 @media (min-width: 576px) {
   .services__categories > .row {
     -webkit-box-pack: start;
@@ -16876,7 +16880,6 @@ a .fa {
   margin-top: 3px;
   font-size: 10px;
   margin-left: 20px;
-  line-height: 1.4;
 }
 
 a.icon_left .fa {
