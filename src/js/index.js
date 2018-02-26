@@ -1,4 +1,3 @@
-import 'bootstrap'
 import Application from './Application'
 
 const $$ = $$ || {}

@@ -1,0 +1,160 @@
+html,
+body {
+  height: 100%;
+}
+
+.p-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.g-header {
+  flex: 0 1 137px;
+
+  background: url('#{$imagePath}/header-bg.png') no-repeat right;
+
+  &__logo {
+	display: flex;
+	align-items: center;
+	height: 137px;
+  }
+}
+
+.g-main {
+  display: flex;
+  flex: 1 1 auto;
+  background: url('#{$imagePath}/main-bg.png') no-repeat right;
+
+  .wrapper {
+	display: flex;
+	height: inherit;
+	flex: 1 1 auto;
+
+	.row {
+	  height: inherit;
+	  flex: 1 1 auto;
+	}
+  }
+
+  &__text-block {
+	display: flex;
+	height: 390px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
+
+  h1 {
+	font-family: $--font-russo-one;
+	font-size: 20px;
+	color: $--color-red;
+	letter-spacing: 0.6px;
+	margin-bottom: 0;
+  }
+
+  h3 {
+	font-family: $--font-brutal-type-regular;
+	font-size: 16px;
+	color: #1c1c1c;
+  }
+
+  .links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 15px;
+  }
+
+  .link {
+	margin-bottom: 5px;
+
+	i {
+	  margin-right: 5px;
+	  font-size: 14px;
+	  color: $--color-red;
+	}
+  }
+
+  a {
+	font-family: $--font-brutal-type-regular;
+	font-size: 12px;
+	color: $--color-red;
+  }
+}
+
+.g-footer {
+  position: relative;
+  height: 95px;
+  flex: 0 1 95px;
+  display: flex;
+  overflow: hidden;
+  font-family: $--font-brutal-type-regular;
+  color: #1c1c1c;
+  font-size: 14px;
+  text-decoration: none;
+
+  a {
+	font-family: $--font-brutal-type-regular;
+	color: #1c1c1c;
+	font-size: 14px;
+	text-decoration: none;
+  }
+
+  img {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	background: #fff;
+  }
+
+  .left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: inherit;
+	background: $--color-red;
+  }
+
+  .right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: inherit;
+	background: #878787;
+  }
+
+  .wrapper {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+
+	.row {
+	  height: 100%;
+	}
+  }
+
+  h2 {
+	font-family: $--font-russo-one;
+	color: $--color-white;
+	font-size: 16px;
+  }
+
+  .phone {
+	margin-bottom: 3px;
+  }
+
+  .address {
+	margin-bottom: 3px;
+  }
+
+  .addresses {
+	text-align: right;
+  }
+}
