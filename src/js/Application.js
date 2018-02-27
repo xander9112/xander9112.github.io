@@ -159,8 +159,8 @@ export default class Application {
         const marginLeft = (parent.width() - image.width()) / 2
 
         image.css({
-          width: 'auto',
-          float: 'left',
+//          width: 'auto',
+//          float: 'left',
           marginLeft: `${marginLeft}px`
         })
       })

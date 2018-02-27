@@ -12,19 +12,35 @@ body {
 .g-header {
   flex: 0 1 137px;
 
-  background: url('#{$imagePath}/header-bg.png') no-repeat right;
+  background: url('#{$imagePath}/header-bg.png') no-repeat right top;
+
+  background-size: 120% 20px;
 
   &__logo {
 	display: flex;
 	align-items: center;
 	height: 137px;
+
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
+  }
+
+  @media only screen and (min-width: 62em) {
+	background-size: auto;
+	background-position-x: 220%;
+  }
+
+  @media only screen and (min-width: 75em) {
+	background-position-x: 100%;
   }
 }
 
 .g-main {
   display: flex;
   flex: 1 1 auto;
-  background: url('#{$imagePath}/main-bg.png') no-repeat right;
+  min-height: 300px;
 
   .wrapper {
 	display: flex;
@@ -67,6 +83,7 @@ body {
   }
 
   .link {
+	display: flex;
 	margin-bottom: 5px;
 
 	i {
@@ -77,31 +94,39 @@ body {
   }
 
   a {
+	display: inline-block;
 	font-family: $--font-brutal-type-regular;
 	font-size: 12px;
 	color: $--color-red;
+  }
+
+  @media only screen and (min-width: 62em) {
+	background: url('#{$imagePath}/main-bg.png') no-repeat right;
   }
 }
 
 .g-footer {
   position: relative;
-  height: 95px;
-  flex: 0 1 95px;
+  flex: 1 0 auto;
+  padding-bottom: 10px;
   display: flex;
   overflow: hidden;
   font-family: $--font-brutal-type-regular;
-  color: #1c1c1c;
+  color: #fff;
   font-size: 14px;
   text-decoration: none;
 
+  background: #878787;
+
   a {
+	color: #fff;
 	font-family: $--font-brutal-type-regular;
-	color: #1c1c1c;
 	font-size: 14px;
 	text-decoration: none;
   }
 
   img {
+	opacity: 0;
 	margin: auto;
 	position: absolute;
 	top: 0;
@@ -110,6 +135,8 @@ body {
 	right: 0;
 	z-index: 1;
 	background: #fff;
+	height: 100%;
+	width: 1250px;
   }
 
   .left {
@@ -141,8 +168,8 @@ body {
   }
 
   h2 {
-	font-family: $--font-russo-one;
 	color: $--color-white;
+	font-family: $--font-russo-one;
 	font-size: 16px;
   }
 
@@ -154,7 +181,40 @@ body {
 	margin-bottom: 3px;
   }
 
+  .phones {
+	margin-top: 5px;
+  }
   .addresses {
-	text-align: right;
+	margin-top: 5px;
+  }
+
+  @media only screen and (min-width: 62em) {
+	height: 95px;
+	flex: 0 1 95px;
+	color: #1c1c1c;
+	padding-bottom: 0;
+	background: #fff;
+
+	img {
+	  opacity: 1;
+	}
+	
+	a {
+	  color: #1c1c1c;
+	}
+
+	.addresses {
+	  text-align: right;
+	  margin-top: 0;
+	}
+
+	.phones {
+	  margin-top: 0;
+	}
+  }
+  @media only screen and (min-width: 75em) {
+	img {
+	  width: 1500px;
+	}
   }
 }
