@@ -1,0 +1,16 @@
+{
+  "name": "HiveCRM",
+  "short_name": "HiveCRM",
+  "lang": "ru-RU",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#d39c00",
+  "icons": [
+    {
+      "src": "/icons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": true
+}
